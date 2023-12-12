@@ -1,0 +1,36 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* background-color: rgb(25, 25, 35); */
+}
+
+.form-product form {
+  display: flex;
+  padding: 3rem 1rem;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+.form-product form input {
+  width: 60%;
+  padding: 30px;
+}
+.Container-ss {
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
+
+.slide-img {
+  width: 100px;
+  height: 100px;
+}
+.slide-bottom {
+  height: 400px;
+  width: 600px;
+}
