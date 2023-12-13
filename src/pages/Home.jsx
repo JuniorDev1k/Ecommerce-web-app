@@ -9,12 +9,10 @@ const Home = () => {
   return (
     <>
       <Header />
-      {/* <Services />
-      <About /> */}
+      <About />
       <CategorySlider />
       <FeaturedProducts />
       <Services />
-      <About />
     </>
   );
 };
