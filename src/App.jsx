@@ -9,8 +9,8 @@ import {
   Signup,
   Login,
 } from "./pages";
-import Nav from "./components/Nav";
-import Footer from "./components/Footer";
+
+import { Nav, Footer } from "./components";
 
 const App = () => {
   return (

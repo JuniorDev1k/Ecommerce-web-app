@@ -1,10 +1,14 @@
 import React from "react";
-import About from "../components/About";
-import Header from "../components/Header";
-import Services from "../components/Services";
-import CategorySlider from "../components/CategorySlider";
-import FeaturedProducts from "../components/FeaturedProducts";
 
+import {
+  About,
+  Header,
+  CategorySlider,
+  FeaturedProducts,
+  Services,
+} from "../components";
+
+// THE WHOLE COMPONENTS responsible for the Home page sections
 const Home = () => {
   return (
     <>
