@@ -1,6 +1,6 @@
 // the entry point of components Folder
 // here we import  all our component and export it .
-import React from "react";
+
 import About from "./About";
 import AboutLeft from "./AboutLeft";
 import Brand from "./Brand";
@@ -13,7 +13,7 @@ import Nav from "./Nav";
 import Footer from "./Footer";
 import Services from "./Services";
 
-export default {
+export {
   About,
   AboutLeft,
   Brand,

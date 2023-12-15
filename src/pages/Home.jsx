@@ -8,7 +8,7 @@ import {
   Services,
 } from "../components";
 
-// THE WHOLE COMPONENTS responsible for the Home page sections
+// The whole components responsible for the Home page sections
 const Home = () => {
   return (
     <>

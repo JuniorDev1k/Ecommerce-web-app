@@ -3,9 +3,9 @@
 
 import Home from "./Home";
 import Error from "./Error";
-// import About from "../components/About";
+import AddProducts from "./Dashboard/AdminDashboard";
 import Products from "./Products";
 import SignlProduct from "./SignlProduct";
 import Signup from "./Signup";
 import Login from "./Login";
-export { Home, Error, Products, SignlProduct, Login, Signup };
+export { Home, Error, Products, SignlProduct, Login, Signup, AddProducts };
