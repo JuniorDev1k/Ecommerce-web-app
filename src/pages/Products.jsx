@@ -11,7 +11,7 @@ const Products = () => {
       <div className="Products-content">
         <FilterSideBar />
         <section className="products-left">
-          <header>
+          <header className="">
             <input type="search" />
             <ProductsUserProfile />
           </header>

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { db } from "../../src/config/firebase";
 import { doc, setDoc } from "firebase/firestore";
-import "../App.css";
 
 const AddProduct = () => {
   const [file, setFile] = useState("");

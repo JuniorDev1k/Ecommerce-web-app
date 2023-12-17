@@ -9,7 +9,7 @@ const Nav = () => {
     <nav>
       <Logo />
       {/* our Navigation Links */}
-      <ul>
+      <ul className=" ">
         {Links.map((i) => {
           const { id, Lname, href } = i;
           return (
