@@ -1,7 +1,6 @@
 import React from "react";
-
 import {
-  // About,
+  About,
   Header,
   // CategorySlider,
   // FeaturedProducts,
@@ -14,9 +13,9 @@ const Home = () => {
     <>
       <Header />
       <Services />
-      {/* <About />
-      <CategorySlider />
-      <FeaturedProducts /> */}
+      <About />
+      {/* <CategorySlider />
+      <FeaturedProducts />  */}
     </>
   );
 };

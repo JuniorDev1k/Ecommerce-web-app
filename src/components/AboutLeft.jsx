@@ -5,17 +5,23 @@ const AboutLeft = (props) => {
   const { img, story, year } = props.object;
 
   return (
-    <div className="about-right  ">
-      <h1 className=" font-robotto">ABOUT US</h1>
-      <div className="about-content">
-        <div className="about-iimg">
-          <img src={img} alt="img-of-us" />
+    <div className="flex  w-3/4 items-center ">
+      <div className="  w-full ">
+        <h1 className=" font-robotto text-center text-xl text-text fw-bold mb-20">
+          ABOUT US
+        </h1>
+        <div className="border-2 border-text mr-2 ">
+          <img src={img} alt="img-of-us" className="" />
         </div>
-        <article>
-          <h1 className="about-headTime  font-poppins  ">{year}</h1>
-          <p className="about-story font-Nunito font-extralight  ">{story}</p>
-        </article>
+
+        <div />
       </div>
+      <article className=" text-text ">
+        <h1 className=" font-poppins  fw-bold  text-2xl mb-4 ">{year}</h1>
+        <p className=" font-Nunito text-sm tracking-wider leading-6 text-accent ">
+          {story}
+        </p>
+      </article>
     </div>
   );
 };
