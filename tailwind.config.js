@@ -6,7 +6,7 @@ export default {
     //   Responsive desine need only the responsive.
     // }
     colors: {
-      text: "#f5e0e3",
+      text: "#FFFFFF",
       background: "#0c0304",
       primary: "#cca3a8",
       secondary: "#770d1a",
@@ -16,6 +16,7 @@ export default {
       poppins: "Poppins",
       Nunito: "Nunito",
       robotto: "Roboto",
+      logo: "Ribeye",
     },
 
     // Typography

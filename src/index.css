@@ -1,8 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500&family=Poppins:wght@300;400;500;700&family=Roboto:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500&family=Poppins:wght@300;400;500;700&family=Ribeye+Marrow&family=Roboto:wght@300;400;700&display=swap");
 
 /* body {
   background-color: red;
