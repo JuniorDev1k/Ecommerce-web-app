@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "./Logo";
 import { Links } from "../data";
-
+//  Navigation Links
 const Nav = () => {
+  // toggle functionality for small screen
   const { toggle, setToggle } = useState(false);
   return (
-    <nav className=" bg-background p-5 flex justify-between ">
+    <nav className=" bg-transparent p-5 flex justify-between absolute top-0 left-0 right-0 ">
       <Logo className=" text font-robotto " />
       {/* our Navigation Links */}
       <ul className="flex justify-center gap-10  flex-1  text-text font-robotto text-l items-center  tracking-wider   ">
