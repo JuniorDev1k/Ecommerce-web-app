@@ -1,10 +1,10 @@
 import React from "react";
 
 import {
-  About,
+  // About,
   Header,
-  CategorySlider,
-  FeaturedProducts,
+  // CategorySlider,
+  // FeaturedProducts,
   Services,
 } from "../components";
 
@@ -13,10 +13,10 @@ const Home = () => {
   return (
     <>
       <Header />
-      <About />
-      <CategorySlider />
-      <FeaturedProducts />
       <Services />
+      {/* <About />
+      <CategorySlider />
+      <FeaturedProducts /> */}
     </>
   );
 };

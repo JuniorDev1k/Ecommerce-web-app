@@ -6,3 +6,59 @@
 /* body {
   background-color: red;
 } */
+.hexagon {
+  width: 180px;
+  height: 170px;
+  clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  animation-name: rotate;
+  animation-duration: 2.6s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  color: red;
+  transition: 0.4s ease;
+}
+.hexagon:hover {
+  background-color: #f91616;
+  color: black;
+  font-weight: bold;
+}
+
+.hexagon p {
+  text-align: center;
+}
+/* my fuckinggggg Animationnn buddy */
+
+@keyframes rotate {
+  0% {
+    transform: translate(0);
+  }
+
+  50% {
+    transform: translate(0, 6px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+.services-bro {
+  height: 100vh;
+
+  background: linear-gradient(
+      1deg,
+      rgba(251, 3, 3, 0.1) -297.99%,
+      rgba(45, 16, 16, 0.1) 95.5%
+    ),
+    #1c0101;
+}
+.services-bro h1 {
+  color: #f91616;
+  font-weight: 400;
+  font-family: Ribeye Marrow;
+}
+.trustworthy {
+  box-shadow: #f91616;
+}

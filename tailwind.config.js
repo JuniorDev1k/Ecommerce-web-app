@@ -9,14 +9,15 @@ export default {
       text: "#FFFFFF",
       background: "#0c0304",
       primary: "#cca3a8",
-      secondary: "#770d1a",
+      secondary: "#f91616",
       accent: "#94b173",
+      background2: "#220202",
     },
     fontFamily: {
       poppins: "Poppins",
       Nunito: "Nunito",
       robotto: "Roboto",
-      logo: "Ribeye",
+      logo: "Ribeye ",
     },
 
     // Typography
