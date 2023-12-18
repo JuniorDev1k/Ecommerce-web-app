@@ -82,6 +82,7 @@ const AddProduct = () => {
           <label htmlFor="">color</label>
           <input type="color" name="color" onChange={handlchange} />
           <button type="submit">Create Product</button>
+          <h1>Functionality drop & drag with react Library</h1>
         </form>
       </div>
     </>
