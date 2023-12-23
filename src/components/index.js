@@ -3,7 +3,7 @@
 
 import About from "./About";
 import AboutLeft from "./AboutLeft";
-import Brand from "./Brand";
+import Brandslid from "./Brandslide";
 import CategorySlider from "./CategorySlider";
 import AddProduct from "./AddProduct";
 import FeaturedProducts from "./FeaturedProducts";
@@ -16,7 +16,7 @@ import Services from "./Services";
 export {
   About,
   AboutLeft,
-  Brand,
+  Brandslid,
   CategorySlider,
   AddProduct,
   FeaturedProducts,

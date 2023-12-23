@@ -5,9 +5,9 @@ import imag2 from "../Assets/Images/christian-wiediger-c3ZWXOv1Ndc-unsplash.jpg"
 import imag3 from "../Assets/Images/unsplash_SsI775V5cDU.png";
 import imag4 from "../Assets/Images/joshua-ng-1sSfrozgiFk-unsplash.jpg";
 import imag5 from "../Assets/Images/joseph-greve-D_1-g2eLho8-unsplash.jpg";
-import imag6 from "../Assets/Images/christian-wiediger-c3ZWXOv1Ndc-unsplash.jpg";
-import imag7 from "../Assets/Imagespexels-dilyar-sultan-596750.jpg";
-import imag8 from "../Assets/Images/pexels-athena-2582928.jpg";
+// import imag6 from "../Assets/Images/christian-wiediger-c3ZWXOv1Ndc-unsplash.jpg";
+// import imag7 from "../Assets/Imagespexels-dilyar-sultan-596750.jpg";
+// import imag8 from "../Assets/Images/pexels-athena-2582928.jpg";
 
 export const Links = [
   { Lname: "Home", id: 1, href: "/" },
@@ -105,13 +105,13 @@ export const categoryS = [
     name: "keyboard SOG45",
     category: "Accessory",
     descb: "Gaming Keyboards",
-    img: imag6,
+    // img: imag6,
   },
   {
     id: 7,
     name: "Remote Controller",
     category: "Accessory",
     descb: "Controller m4v2 rk24_b1",
-    img: imag7,
+    // img: imag7,
   },
 ];

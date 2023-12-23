@@ -2,8 +2,8 @@ import React from "react";
 import {
   About,
   Header,
-  // CategorySlider,
-  // FeaturedProducts,
+  CategorySlider,
+  Brandslid,
   Services,
 } from "../components";
 
@@ -14,8 +14,8 @@ const Home = () => {
       <Header />
       <Services />
       <About />
-      {/* <CategorySlider />
-      <FeaturedProducts />  */}
+      <CategorySlider />
+      <Brandslid />
     </>
   );
 };
