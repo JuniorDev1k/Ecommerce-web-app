@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Auth, GoolgSign, db } from "../config/firebase";
 import {
   createUserWithEmailAndPassword,
@@ -13,7 +14,7 @@ const Signup = () => {
   const [password, setPassword] = useState();
 
   const [custmer, setCustmer] = useState("");
-
+  const Navigate = useNavigate();
   const adduserTocollection = async (userID) => {
     await setDoc(doc(db, "Users", userID), {
       name: "Los Angeles",
@@ -30,8 +31,11 @@ const Signup = () => {
       !user
         ? console.log(`shit happend bro there s no user bro`)
         : console.log(
-            `the fucking user is : ${user.displayName} and the id : ${user.uid}  `
+            `the fucking user is : ${user & user.displayName} and the id : ${
+              user.uid
+            }  `
           );
+      Navigate("/Products");
 
       setCustmer(user);
       //add the user to firesotre database

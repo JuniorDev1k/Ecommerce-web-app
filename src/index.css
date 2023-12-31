@@ -62,3 +62,6 @@
 .trustworthy {
   box-shadow: #f91616;
 }
+input {
+  border: 2px solid black;
+}
