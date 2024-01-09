@@ -30,13 +30,13 @@ const Services = () => {
             </div>
           </div>
           {/* left part  ---------------------------------------------------*/}
-          <div class="flex flex-col w-1/2 justify-between  p-20">
-            <h1 class="servicesTtitle  text-3xl mt-2 font-robotto">
+          <div className="flex flex-col w-1/2 justify-between  p-20">
+            <h1 className="servicesTtitle  text-3xl mt-2 font-robotto">
               OUR SERVICES
             </h1>
-            <div class="trustworthy flex flex-col gap-2 text-lg border-l-4 border-red-800  p-5 font-poppins  ">
-              <div class="flex gap-4">
-                <h1 class="font-bold text-secondary  "># 1</h1>
+            <div className="trustworthy flex flex-col gap-2 text-lg border-l-4 border-red-800  p-5 font-poppins  ">
+              <div className="flex gap-4">
+                <h1 className="font-bold text-secondary  "># 1</h1>
                 <h1 className="text-text">OUE CLIENTS OUR PRIORITY</h1>
               </div>
               <div className="flex gap-4">
