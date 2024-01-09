@@ -5,14 +5,7 @@ export default {
     // screens : {
     //   Responsive desine need only the responsive.
     // }
-    colors: {
-      text: "#FFFFFF",
-      background: "#0c0304",
-      primary: "#cca3a8",
-      secondary: "#f91616",
-      accent: "#94b173",
-      background2: "#220202",
-    },
+
     fontFamily: {
       poppins: "Poppins",
       Nunito: "Nunito",
@@ -21,7 +14,16 @@ export default {
     },
 
     // Typography
-    extend: {},
+    extend: {
+      colors: {
+        text: "#FFFFFF",
+        background: "black",
+        primary: "#cca3a8",
+        secondary: "#f91616",
+        accent: "#94b173",
+        background2: "#220202",
+      },
+    },
   },
   plugins: [],
 };

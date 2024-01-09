@@ -6,6 +6,14 @@
 /* body {
   background-color: red;
 } */
+.services-container {
+  background: linear-gradient(
+      1deg,
+      rgba(250, 3, 3, 0.1) -297.99%,
+      rgba(6, 3, 3, 0.1) 95.5%
+    ),
+    #010101;
+}
 .hexagon {
   width: 180px;
   height: 170px;
@@ -20,6 +28,7 @@
   animation-iteration-count: infinite;
   color: red;
   transition: 0.4s ease;
+  z-index: 100;
 }
 .hexagon:hover {
   background-color: #f91616;
@@ -55,7 +64,8 @@
     #1c0101;
 }
 .services-bro h1 {
-  color: #f91616;
+  background: #240101;
+  background: linear-gradient(to right, #240101 0%, #ff1a16 100%);
   font-weight: 400;
   font-family: Ribeye Marrow;
 }
@@ -64,4 +74,13 @@
 }
 input {
   border: 2px solid black;
+}
+.a2 {
+  filter: drop-shadow(0 7px 7px rgba(227, 4, 4, 0.5));
+}
+.servicesTtitle {
+  background: #240101;
+  background: linear-gradient(to right, #240101 0%, #ff1a16 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

@@ -14,8 +14,8 @@ const Home = () => {
       <Header />
       <Services />
       <About />
-      <CategorySlider />
-      <Brandslid />
+      {/* <CategorySlider />
+      <Brandslid /> */}
     </>
   );
 };

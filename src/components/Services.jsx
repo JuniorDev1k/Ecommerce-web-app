@@ -1,32 +1,40 @@
-import React from "react";
+import React, { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import Logo from "./Logo";
 import Hexagone from "./Hexagone";
+
 const Services = () => {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
   return (
     <>
-      <div className="min-h-screen bg-background ">
-        <section className="flex p-20">
-          <div className="felx w-1/2 ">
-            <div className="flex justify-center gap-6 ">
+      <div className=" services-container min-h-screen">
+        <section className="flex p-20 gap-5 max-sm:flex-col max-sm:items-center">
+          <div className="felx w-1/2  " data-aos="zoom-in">
+            <div className=" a2  flex justify-center gap-6  max-sm:flex-col ">
               <Hexagone hex="HIGHT QUALITY PRODUCTS" />
               <Hexagone hex="HAVE FUN" />
             </div>
-            <div className="flex justify-center gap-16 items-center">
+            <div className="a2 flex justify-center gap-16 md:items-center max-md:gap-6 max-sm:flex-col">
               <Hexagone hex="CUSTOM STOR FUNCTIONALITIES" />
-              <div className="border-b-4 border-red-400 rounded pb-1">
+              <div className="border-b-4 border-red-400 rounded pb-1 max-md:hidden ">
                 <Logo />
               </div>
               <Hexagone hex="HAVE FUN" />
             </div>
-            <div className="flex justify-center gap-6">
+            <div className="a2 flex justify-center gap-6 max-md:gap-6 max-sm:flex-col">
               <Hexagone hex="HAVE FUN" />
               <Hexagone hex="HAVE FUN" />
             </div>
           </div>
           {/* left part  ---------------------------------------------------*/}
-          <div class="flex flex-col w-1/2 justify-between items-center p-20">
-            <h1 class="text-3xl text-text mt-2 font-robotto ">OUR SERVICES</h1>
-            <div class="trustworthy flex flex-col gap-2 text-lg bg-background2 p-5 font-poppins  ">
+          <div class="flex flex-col w-1/2 justify-between  p-20">
+            <h1 class="servicesTtitle  text-3xl mt-2 font-robotto">
+              OUR SERVICES
+            </h1>
+            <div class="trustworthy flex flex-col gap-2 text-lg border-l-4 border-red-800  p-5 font-poppins  ">
               <div class="flex gap-4">
                 <h1 class="font-bold text-secondary  "># 1</h1>
                 <h1 className="text-text">OUE CLIENTS OUR PRIORITY</h1>
