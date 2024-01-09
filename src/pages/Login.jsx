@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { Auth } from "../config/firebase";
+import { Container } from "postcss";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -9,63 +10,70 @@ const Login = () => {
   const [derror, setDerror] = useState(false);
   const [user, setUser] = useState(null);
   const Navigate = useNavigate();
-  const handlsubmit = async (e) => {
-    e.preventDefault();
+  // const handlsubmit = async (e) => {
+  //   e.preventDefault();
 
-    try {
-      const userCredential = await signInWithEmailAndPassword(
-        Auth,
-        email,
-        password
-      );
-      console.log(`email : ${email} passowd : ${password}`);
-      const user = userCredential.user;
-      setUser(user);
-      Navigate("/Products");
+  //   try {
+  //     const userCredential = await signInWithEmailAndPassword(
+  //       Auth,
+  //       email,
+  //       password
+  //     );
+  //     console.log(`email : ${email} passowd : ${password}`);
+  //     const user = userCredential.user;
+  //     setUser(user);
+  //     Navigate("/Products");
 
-      // Signed In
-    } catch (error) {
-      setDerror(true);
-    }
-  };
-  const signOutuser = async () => {
-    await signOut(Auth);
-  };
+  //     // Signed In
+  //   } catch (error) {
+  //     setDerror(true);
+  //   }
+  // };
+  // const signOutuser = async () => {
+  //   await signOut(Auth);
+  // };
   return (
     <>
-      {!user ? (
-        <form onSubmit={handlsubmit}>
-          <h1>Login</h1>
-          <label htmlFor="" className="m-10">
-            Email
-          </label>
-          <input
-            type="Email"
-            placeholder="Enter your Email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <label className="m-10" htmlFor="">
-            Youe passwored
-          </label>
-          <input
-            type="password"
-            placeholder="*****"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <button type="submit"> LogIn </button>
-          <div>
-            <h1>Don't Have an Account ? </h1>
-            <button onClick={Navigate("/Signup")}> signup </button>
+      <div className="login p-10 h-screen flex items-center justify-center flex-col text-red-700 ">
+        <div className="border-2 border-white p-4 w-1/2  flex flex-col items-center  ">
+          <h1 className="text-2xl text-white text-center mb-10">
+            Login in to Gamevabe
+          </h1>
+          <form action="" className="w-3/4">
+            <div className="flex flex-col gap-4 ">
+              <input
+                className="p-2"
+                type="text"
+                name=""
+                id=""
+                placeholder="Username"
+              />
+              <input
+                className="p-2"
+                type="text"
+                name=""
+                id=""
+                placeholder="Password"
+              />
+            </div>
+            <div className="flex m-10">
+              <p>-------------</p>
+              <p>or</p>
+              <p>-------------</p>
+            </div>
+            <input
+              className="p-2"
+              type="text"
+              placeholder="Continue with Google"
+            />
+            <i>icon</i>
+          </form>
+          <div className="mt-40">
+            <p> Dont't have a Shopping account </p>
+            <button>Sign Up</button>
           </div>
-
-          {derror && <span>Wrong Email or password !!</span>}
-        </form>
-      ) : (
-        <div className="user">
-          <h4>Welcommmeeee {user.email} !</h4>
-          <button onClick={signOutuser}>Logout</button>
         </div>
-      )}
+      </div>
     </>
   );
 };
