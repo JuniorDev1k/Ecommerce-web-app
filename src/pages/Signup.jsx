@@ -53,27 +53,47 @@ const Signup = () => {
   };
   return (
     <>
-      <input
-        type="Email"
-        placeholder="example@gmai.com"
-        onChange={(e) => setEmail(e.target.value)}
-        required
-      />
-      <input
-        type="Password"
-        placeholder="*******"
-        onChange={(e) => setPassword(e.target.value)}
-        required
-      />
+      <div className="flex justify-center items-center h-screen   ">
+        <div className="flex flex-col border-2 border-red-500 p-10  gap-2 items-center ">
+          <label htmlFor="email">Email</label>
+          <input
+            type="Email"
+            id="email"
+            placeholder="example@gmai.com"
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <label htmlFor="password">Password</label>
+          <input
+            type="Password"
+            id="password"
+            placeholder="*******"
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
 
-      <button onClick={SignFirbase}>singup</button>
-      <div>
-        <h3>or</h3>
-        <button onClick={SignInWithGoogle}>Sign in With Goolg</button>
-      </div>
-      <button onClick={Logout}>Logout</button>
-      <div className="profile-dettils">
-        <h3>{}</h3>
+          <button
+            className="bg-red-700 rounded p-2 hover:bg-slate-600 "
+            onClick={SignFirbase}
+          >
+            singup
+          </button>
+          <div>
+            <h3 className="text-center mb-4 "> or</h3>
+            <button
+              className="bg-red-700 rounded p-2  hover:bg-slate-600"
+              onClick={SignInWithGoogle}
+            >
+              Sign in With Goolg
+            </button>
+          </div>
+          <button
+            className="bg-red-700 rounded p-2  hover:bg-slate-600"
+            onClick={Logout}
+          >
+            Logout
+          </button>
+        </div>
       </div>
     </>
   );

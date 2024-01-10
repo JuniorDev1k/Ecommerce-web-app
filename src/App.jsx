@@ -16,7 +16,7 @@ const App = () => {
   return (
     // we setup the routing
     <>
-      <Nav />
+      {/* <Nav /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Products" element={<Products />} />
