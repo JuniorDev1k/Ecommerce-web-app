@@ -10,7 +10,7 @@ const Login = () => {
   const [err, setErr] = useState(false);
   const [loading, setLoading] = useState(false);
   // login fucntion from context
-  const { SigniWithEmail, currentuser } = useAuth();
+  const { SigniWithEmail, currentuser, SignWithGoogle } = useAuth();
 
   // navigation link
 
@@ -28,6 +28,18 @@ const Login = () => {
       setLoading(false);
       setErr("Wrong Email or Password");
       return;
+    }
+  };
+  const Google = async () => {
+    try {
+      await SignWithGoogle();
+      console.log("proceccing");
+      setLoading(true);
+      Navigate("/");
+    } catch (err) {
+      console.log(`error with google : ${err}`);
+      setLoading(false);
+      setErr("erorr Google Auth");
     }
   };
 
@@ -74,12 +86,8 @@ const Login = () => {
             <p>or</p>
             <p>-------------</p>
           </div>
-          <input
-            className="p-2"
-            type="text"
-            placeholder="Continue with Google"
-          />
-          <i>icon</i>
+          <button onClick={Google}>Google</button>
+
           <div className="mt-10">
             <p> Dont't have a Shopping account </p>
             <button>Sign Up</button>
