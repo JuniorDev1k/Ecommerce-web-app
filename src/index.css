@@ -15,8 +15,8 @@
     #010101;
 }
 .hexagon {
-  width: 180px;
-  height: 170px;
+  height: 11rem;
+  width: 11rem;
   clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
   display: flex;
   align-items: center;
@@ -29,6 +29,12 @@
   color: red;
   transition: 0.4s ease;
   z-index: 100;
+}
+@media screen and (max-width: 1000px) and (min-width: 481px) {
+  .hexagon {
+    height: 9rem;
+    width: 9rem;
+  }
 }
 .hexagon:hover {
   background-color: #f91616;
