@@ -12,8 +12,8 @@ const Header = () => {
           <h1 className="text-3xl max-sm:text-lg leading-10	max-sm:mt-10  ">
             BROWS TRENDS GAMING PRODUCTS
           </h1>
-          <h1 className="text-l text-accent max-sm:text-sm">
-            SEARCH YOUR DESIRED PIECES{" "}
+          <h1 className="text-l   max-sm:text-sm">
+            SEARCH YOUR DESIRED PIECES
           </h1>
           <Button button="NAVIGATE" />
         </div>
@@ -22,7 +22,7 @@ const Header = () => {
       <div className="  flex flex-col items-end tracking-wider ">
         <div className="   lg:w-1/3 w-1/2  ">
           <h1 className="text-3xl max-sm:text-lg "> WHO WE ARE</h1>
-          <h1 className="text-l max-sm:text-sm text-accent "> DISCOVER US </h1>
+          <h1 className="text-l max-sm:text-sm   "> DISCOVER US </h1>
           <Button button="OUR STORY" />
         </div>
       </div>
