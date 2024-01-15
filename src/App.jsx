@@ -10,6 +10,7 @@ import {
   Signup,
   Login,
 } from "./pages";
+import ForProducts from "./ProtectedRoutes/forProducts";
 
 import { Nav, Footer } from "./components";
 
@@ -21,7 +22,14 @@ const App = () => {
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/Products" element={<Products />} />
+          <Route
+            path="/Products"
+            element={
+              <ForProducts>
+                <Products />
+              </ForProducts>
+            }
+          />
           <Route path="/Admin" element={<AddProducts />} />
           <Route path="/Products/4" element={<SignlProduct />} />
           <Route path="/signup" element={<Signup />} />

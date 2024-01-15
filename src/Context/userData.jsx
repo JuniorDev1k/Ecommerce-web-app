@@ -5,13 +5,14 @@ import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signOut,
+  signInWithEmailAndPassword,
 } from "firebase/auth";
 
 import { auth } from "../config/firebase";
 
-// setting up our Auth Context.
+// creating conext
 export const AuthContext = createContext();
-
+// setting up our Auth Context.
 export const useAuth = () => {
   return useContext(AuthContext);
 };
@@ -19,10 +20,11 @@ export const useAuth = () => {
 export const AuthProvider = ({ children }) => {
   const [currentuser, setCurrentuser] = useState(null);
   const Navigate = useNavigate();
-
+  // create user fucntion for sign up
   const CreateUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
+  // track user state
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       //Setting the user
@@ -35,13 +37,18 @@ export const AuthProvider = ({ children }) => {
 
   // logout function
   const Logout = () => {
-    return auth.signOut();
+    return signOut(auth);
   };
+  // login fucntion
 
+  const SigniWithEmail = (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password);
+  };
   const value = {
     currentuser,
     CreateUser,
     Logout,
+    SigniWithEmail,
   };
   return (
     <>

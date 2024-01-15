@@ -1,76 +1,89 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { signInWithEmailAndPassword, signOut } from "firebase/auth";
-import { Auth } from "../config/firebase";
-import { Container } from "postcss";
+import { useAuth } from "../Context/userData";
 
 const Login = () => {
+  // user inputs values
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [derror, setDerror] = useState(false);
-  const [user, setUser] = useState(null);
+  // error hadnling + loading for userExperience
+  const [err, setErr] = useState(false);
+  const [loading, setLoading] = useState(false);
+  // login fucntion from context
+  const { SigniWithEmail, currentuser } = useAuth();
+
+  // navigation link
+
   const Navigate = useNavigate();
-  // const handlsubmit = async (e) => {
-  //   e.preventDefault();
 
-  //   try {
-  //     const userCredential = await signInWithEmailAndPassword(
-  //       Auth,
-  //       email,
-  //       password
-  //     );
-  //     console.log(`email : ${email} passowd : ${password}`);
-  //     const user = userCredential.user;
-  //     setUser(user);
-  //     Navigate("/Products");
+  const handlsubmit = async (e) => {
+    e.preventDefault();
+    try {
+      console.log("processing .....");
+      await SigniWithEmail(email, password);
+      setLoading(true);
+      Navigate("/");
+    } catch (error) {
+      console.log(`error occured : ${error}`);
+      setLoading(false);
+      setErr("Wrong Email or Password");
+      return;
+    }
+  };
 
-  //     // Signed In
-  //   } catch (error) {
-  //     setDerror(true);
-  //   }
-  // };
-  // const signOutuser = async () => {
-  //   await signOut(Auth);
-  // };
   return (
     <>
-      <div className="login p-10 h-screen flex items-center justify-center flex-col text-red-700 ">
+      <div className="login p-10   flex items-center justify-center flex-col text-red-700 ">
         <div className="border-2 border-white p-4 w-1/2  flex flex-col items-center  ">
           <h1 className="text-2xl text-white text-center mb-10">
             Login in to Gamevabe
           </h1>
-          <form action="" className="w-3/4">
+          <form onSubmit={handlsubmit} className="w-3/4">
             <div className="flex flex-col gap-4 ">
+              <label htmlFor="Emial">Email</label>
               <input
                 className="p-2"
-                type="text"
+                type="Email"
                 name=""
-                id=""
-                placeholder="Username"
+                id="Email"
+                placeholder="Example@,,,,,.com"
+                onChange={(e) => setEmail(e.target.value)}
               />
+              <label htmlFor="password">Password</label>
               <input
                 className="p-2"
-                type="text"
+                type="password"
                 name=""
-                id=""
-                placeholder="Password"
+                id="passqord"
+                placeholder="******"
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-            <div className="flex m-10">
-              <p>-------------</p>
-              <p>or</p>
-              <p>-------------</p>
-            </div>
-            <input
-              className="p-2"
-              type="text"
-              placeholder="Continue with Google"
-            />
-            <i>icon</i>
+            <button
+              className="bg-white p-2 rounded-2xl mt-4 ml-10   "
+              type="submite"
+            >
+              {" "}
+              SingIn{" "}
+            </button>
+            {err && <h1 className="text-red-600 text-center">{err}</h1>}
           </form>
-          <div className="mt-40">
+
+          <div className="flex m-10">
+            <p>-------------</p>
+            <p>or</p>
+            <p>-------------</p>
+          </div>
+          <input
+            className="p-2"
+            type="text"
+            placeholder="Continue with Google"
+          />
+          <i>icon</i>
+          <div className="mt-10">
             <p> Dont't have a Shopping account </p>
             <button>Sign Up</button>
+            {/* redirect to signup */}
           </div>
         </div>
       </div>

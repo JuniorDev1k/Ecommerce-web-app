@@ -13,8 +13,8 @@ const Nav = () => {
   console.log(toggle);
   const signout = async () => {
     try {
-      await Logout;
-      Navigate("/Login");
+      await Logout();
+      console.log("u r logged out");
     } catch (error) {
       console.log(error);
     }
@@ -64,7 +64,7 @@ const Nav = () => {
               onClick={signout}
             >
               {" "}
-              Sign out
+              Log Out
             </button>
           </>
         ) : (
