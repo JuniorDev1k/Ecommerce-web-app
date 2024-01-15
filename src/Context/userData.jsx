@@ -1,30 +1,54 @@
-import React, { Children, useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { createContext } from "react";
-import { Auth } from "../config/firebase";
-// setting up our Auth Context
+import { useNavigate } from "react-router-dom";
+import {
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
+} from "firebase/auth";
 
-export const AppContext = createContext({});
-//   -- Custome hook for Authuntication context
+import { auth } from "../config/firebase";
+
+// setting up our Auth Context.
+export const AuthContext = createContext();
+
 export const useAuth = () => {
-  return useContext(AppContext);
+  return useContext(AuthContext);
 };
-const AuthContext = (children) => {
-  const [currentuser, setCurrentuser] = userState();
-  const SignUp = (email, password) => {
-    return createUserWithEmailAndPassword(Auth, email, password);
+
+export const AuthProvider = ({ children }) => {
+  const [currentuser, setCurrentuser] = useState(null);
+  const Navigate = useNavigate();
+
+  const CreateUser = (email, password) => {
+    return createUserWithEmailAndPassword(auth, email, password);
   };
-  Auth.onAuthStateChanged((user) => {
-    //Setting the user
-    setCurrentuser(user);
-  });
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      //Setting the user
+      setCurrentuser(user);
+      ("");
+    });
+
+    return unsubscribe;
+  }, []);
+
+  // logout function
+  const Logout = () => {
+    return auth.signOut();
+  };
+
   const value = {
     currentuser,
-    SignUp,
+    CreateUser,
+    Logout,
   };
   return (
     <>
-      <AppContext.Provider value={value}>{children}</AppContext.Provider>
+      <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
     </>
   );
 };
-export default AuthContext;
+
+// here we setup our auth functions liek ( login, signup, logout, users data , usersAuthState)
+//  and export them to use in their components

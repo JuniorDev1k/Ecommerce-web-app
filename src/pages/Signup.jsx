@@ -1,98 +1,66 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Auth, GoolgSign, db } from "../config/firebase";
-import {
-  createUserWithEmailAndPassword,
-  signOut,
-  signInWithPopup,
-} from "firebase/auth";
-import { doc, setDoc } from "firebase/firestore";
+import { useAuth } from "../Context/userData";
+
+// import signUP from context
 
 const Signup = () => {
-  // use usercredentiel for getting the data of user
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
-
-  const [custmer, setCustmer] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [err, setErr] = useState("");
+  const [loading, setLoading] = useState(false);
   const Navigate = useNavigate();
-  const adduserTocollection = async (userID) => {
-    await setDoc(doc(db, "Users", userID), {
-      name: "Los Angeles",
-      state: "CA",
-      country: "USA",
-    });
-  };
+  const { CreateUser, currentuser } = useAuth();
 
-  const SignFirbase = async () => {
+  const SignFirbase = async (e) => {
+    e.preventDefault();
     try {
-      await createUserWithEmailAndPassword(Auth, email, password);
-
-      const user = Auth.currentUser;
-      !user
-        ? console.log(`shit happend bro there s no user bro`)
-        : console.log(
-            `the fucking user is : ${user & user.displayName} and the id : ${
-              user.uid
-            }  `
-          );
-      Navigate("/Products");
-
-      setCustmer(user);
-      //add the user to firesotre database
-      await adduserTocollection(user.uid);
-    } catch (err) {
-      console.error(err);
+      setErr("");
+      setLoading(true);
+      await CreateUser(email, password);
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+    } finally {
+      setLoading(false);
+      Navigate("/");
     }
   };
 
-  const SignInWithGoogle = async () => {
-    await signInWithPopup(Auth, GoolgSign);
-  };
-  const Logout = async () => {
-    await signOut(Auth);
-  };
   return (
+    // we better write less html code below
     <>
       <div className="flex justify-center items-center h-screen   ">
         <div className="flex flex-col border-2 border-red-500 p-10  gap-2 items-center ">
-          <label htmlFor="email">Email</label>
-          <input
-            type="Email"
-            id="email"
-            placeholder="example@gmai.com"
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <label htmlFor="password">Password</label>
-          <input
-            type="Password"
-            id="password"
-            placeholder="*******"
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
+          <form className="flex flex-col gap-10" onSubmit={SignFirbase}>
+            {err}
+            <label htmlFor="email">Email</label>
+            <input
+              className="p-2"
+              type="Email"
+              id="email"
+              placeholder="example@gmai.com"
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <label htmlFor="password">Password</label>
+            <input
+              className="p-2"
+              type="Password"
+              id="password"
+              placeholder="*******"
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
 
-          <button
-            className="bg-red-700 rounded p-2 hover:bg-slate-600 "
-            onClick={SignFirbase}
-          >
-            singup
-          </button>
-          <div>
-            <h3 className="text-center mb-4 "> or</h3>
             <button
-              className="bg-red-700 rounded p-2  hover:bg-slate-600"
-              onClick={SignInWithGoogle}
+              hidden={loading}
+              type="submit"
+              className="bg-red-700 rounded p-2 hover:bg-slate-600 "
             >
-              Sign in With Goolg
+              SignUp
             </button>
-          </div>
-          <button
-            className="bg-red-700 rounded p-2  hover:bg-slate-600"
-            onClick={Logout}
-          >
-            Logout
-          </button>
+          </form>
         </div>
       </div>
     </>
