@@ -91,15 +91,8 @@ input {
   -webkit-text-fill-color: transparent;
 }
 .login {
-  background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.95) 0.34%,
-      rgba(11, 7, 7, 0.95) 205.33%
-    ),
-    rgba(255, 0, 0, 0.4);
+  box-shadow: 0 4px 6px -6px rgb(192, 187, 187);
 }
 .signup-container {
   box-shadow: 0 4px 6px -6px rgb(192, 187, 187);
-  /* box-shadow: inset 5px 5px 10px #696565,
-    inset -5px -5px 10px rgb(123, 123, 128); */
 }
