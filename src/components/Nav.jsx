@@ -10,7 +10,7 @@ const Nav = () => {
   const [toggle, setToggle] = useState(false);
   const { currentuser, Logout } = useAuth();
   const Navigate = useNavigate();
-  console.log(toggle);
+
   const signout = async () => {
     try {
       await Logout();
@@ -23,7 +23,7 @@ const Nav = () => {
     <nav className=" bg-transparent p-5 flex justify-between absolute top-0 left-0 right-0 ">
       <Logo className=" text font-robotto " />
       {/* our Navigation Links */}
-      <ul className="flex justify-center gap-10  flex-1  text-text font-robotto text-l items-center  tracking-wider max-lg:hidden">
+      <ul className="flex justify-center gap-10  flex-1  text-text font-robotto text-l items-center  tracking-wider max-md:hidden">
         {Links.map((i) => {
           const { id, Lname, href } = i;
           return (
@@ -34,7 +34,7 @@ const Nav = () => {
         })}
       </ul>
       {toggle && (
-        <ul className="small-screen-links absolute left-0 top-0 w-40 h-screen p-5 flex flex-col gap-8 items-center bg-transparent/75 lg:hidden ">
+        <ul className="small-screen-links absolute left-0 top-0 w-40 h-screen p-5 flex flex-col gap-8 items-center bg-transparent/75 md:hidden ">
           {Links.map((i) => {
             const { id, Lname, href } = i;
             return (
@@ -65,6 +65,9 @@ const Nav = () => {
             >
               {" "}
               Log Out
+            </button>
+            <button onClick={() => setToggle(!toggle)} className="lg:hidden">
+              X
             </button>
           </>
         ) : (
