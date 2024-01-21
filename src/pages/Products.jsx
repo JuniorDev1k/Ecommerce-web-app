@@ -1,14 +1,16 @@
 import React from "react";
 
-import FeaturedProducts from "../components/FeaturedProducts";
-import FilterSideBar from "../components/FilterSideBar";
-import ProductsUserProfile from "../components/ProductsUserProfile";
-import ProductsGrid from "../components/ProductsGrid";
+import {
+  ProductsUserProfile,
+  FilterSideBar,
+  ProductsGrid,
+  FeaturedProducts,
+} from "../components";
 
 const Products = () => {
   return (
     <>
-      <FeaturedProducts />
+      {/* <FeaturedProducts /> */}
       <div className="Products-content">
         <FilterSideBar />
         <section className="products-left">

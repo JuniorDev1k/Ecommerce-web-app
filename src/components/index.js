@@ -12,6 +12,8 @@ import Header from "./Header";
 import Nav from "./Nav";
 import Footer from "./Footer";
 import Services from "./Services";
+import ProductsGrid from "./ProductsGrid";
+import ProductsUserProfile from "./ProductsUserProfile";
 
 export {
   About,
@@ -25,4 +27,6 @@ export {
   Nav,
   Footer,
   Services,
+  ProductsGrid,
+  ProductsUserProfile,
 };

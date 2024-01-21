@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../Context/userData";
-import { collection, addDoc } from "firebase/firestore";
+import { setDoc, doc } from "firebase/firestore";
 import { db } from "../config/firebase";
 // this component will render only if user clicked signup and provided email
 // this componenet is responsible for ciompleting thew signup ( Display name + ProfilePicture. .. additioanl data )
@@ -9,25 +9,37 @@ import { db } from "../config/firebase";
 const CompletSignIp = () => {
   const { currentuser } = useAuth();
   const Navigate = useNavigate();
-  const [displayname, setDisplayname] = useState("");
+
+  const [file, setFile] = useState("file.jpg");
+  const [data, setData] = useState({});
 
   // getting the current user from the Context (  After SignUp  )
 
-  console.log(displayname);
+  console.log(data);
   //storing user info DB
+  const addData = (e) => {
+    const id = e.target.id;
+    const value = e.target.value;
+
+    setData({
+      ...data,
+      [id]: value,
+      email: currentuser.email,
+      imgUrl: file,
+    });
+  };
   const addUsertoDB = async (e) => {
     e.preventDefault();
+
     try {
-      const docRef = await addDoc(collection(db, "Users"), {
-        displayname: displayname,
-        imgUrl: "img Url",
-        email: currentuser.email,
-        id: currentuser.uid,
+      await setDoc(doc(db, "Users", currentuser.uid), {
+        ...data,
       });
 
-      console.log("Document written with ID: ", docRef.id);
+      console.log("User Aded");
     } catch (e) {
       console.error("Error adding document: ", e);
+      Navigate("/Signup");
     } finally {
       Navigate("/");
     }
@@ -41,14 +53,15 @@ const CompletSignIp = () => {
         onSubmit={addUsertoDB}
       >
         <div className="flex flex-col gap-2 ">
-          <label htmlFor="disp"> Display Name </label>
+          <label htmlFor="displayname"> Display Name </label>
           <input
             type="text"
+            maxLength="16"
             required
             className="p-2 rounded-xl    "
-            id="disp"
+            id="displayname"
             placeholder="displayname ...."
-            onChange={(e) => setDisplayname(e.target.value)}
+            onChange={addData}
           />
         </div>
         <div>
