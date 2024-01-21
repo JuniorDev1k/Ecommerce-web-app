@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../Context/userData";
 import { Link } from "react-router-dom";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../config/firebase";
 
 // import signUP from context
 
@@ -12,6 +14,22 @@ const Signup = () => {
   const [loading, setLoading] = useState(false);
   const Navigate = useNavigate();
   const { CreateUser, currentuser } = useAuth();
+
+  const addUsertoDB = async (user) => {
+    try {
+      const docRef = await addDoc(collection(db, "Users"), {
+        UserEmail: user.email,
+        displayName: "didnt do it actually",
+        cart: null,
+        id: user.uid,
+        photoURL: "not yet",
+      });
+
+      console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+  };
 
   const SignFirbase = async (e) => {
     e.preventDefault();
@@ -24,7 +42,11 @@ const Signup = () => {
       setLoading(false);
     } finally {
       setLoading(false);
-      Navigate("/");
+      if (currentuser) {
+        addUsertoDB(currentuser);
+        Navigate("/");
+      }
+      console.log("its not working");
     }
   };
 
