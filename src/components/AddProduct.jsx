@@ -3,6 +3,7 @@ import { db, Storage } from "../../src/config/firebase";
 import { doc, addDoc, collection } from "firebase/firestore";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { useNavigate } from "react-router-dom";
+import Noimg from "../../Assets/Images/image-tools.svg";
 
 const AddProduct = () => {
   const [file, setFile] = useState(null);
@@ -53,7 +54,7 @@ const AddProduct = () => {
           // After upladoing successfully, adding the imgUrl to data state
           getDownloadURL(upload.snapshot.ref).then((downloadURL) => {
             console.log("ing available at : ", downloadURL);
-            setData((prev) => ({ ...prev, ImglUrl: downloadURL })); // handling the state ( prev )
+            setData((prev) => ({ ...prev, ImgUrl: downloadURL })); // handling the state ( prev )
           });
         }
       );
@@ -166,7 +167,7 @@ const AddProduct = () => {
               onChange={(e) => setFile(e.target.files[0])}
             />
             <img
-              src={file ? URL.createObjectURL(file) : "img stpid"}
+              src={file ? URL.createObjectURL(file) : Noimg}
               alt={file ? "not yet" : "letgsgosogso"}
             />
           </div>
