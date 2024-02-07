@@ -25,6 +25,7 @@ const AddProduct = () => {
   ];
   useEffect(() => {
     const upLoadFile = () => {
+      // uploading product image
       const productFolderRef = ref(Storage, `ProductsImg/${file.name}`);
       const upload = uploadBytesResumable(productFolderRef, file);
       console.log(file);
@@ -45,19 +46,24 @@ const AddProduct = () => {
           }
         },
         (error) => {
-          console.log(error);
+          console.log(`Error uplading image`, error);
+          // handling uploading error
         },
         () => {
+          // After upladoing successfully, adding the imgUrl to data state
           getDownloadURL(upload.snapshot.ref).then((downloadURL) => {
             console.log("ing available at : ", downloadURL);
+            setData((prev) => ({ ...prev, ImglUrl: downloadURL })); // handling the state ( prev )
           });
         }
       );
     };
+    // chechking if the file exists  => running the uploading function
     file && upLoadFile();
   }, [file]);
 
   const handlchange = (e) => {
+    // adding user inputs to data state
     const name = e.target.name;
     const value = e.target.value;
 
@@ -65,20 +71,20 @@ const AddProduct = () => {
   };
 
   const AddProduct = async (e) => {
+    // Add a new document in collection "Products"
     e.preventDefault();
-    if (file) {
-      setData((prev) => ({ ...prev, ImgUrl: "ProductsImg/" + file.name }));
-    }
+
     try {
       await addDoc(collection(db, "Products"), data);
+      console.log(data);
     } catch (err) {
+      // handling add prodcut to database errors
       console.log(err);
       setErr("error creating product,try again");
     } finally {
-      console.log(data);
+      // console.log(data);
+      // success adding product
     }
-
-    // Add a new document in collection "Products"
   };
 
   return (
