@@ -97,7 +97,6 @@ const AddProduct = () => {
           className={`flex flex-col gap-4 border-2  border-t-gray-900 p-2 w-1/2`}
         >
           <h1 className="text-center ">Add you Prudct</h1>
-
           <label htmlFor="title">Product Title</label>
           <input
             type="text"
@@ -106,7 +105,6 @@ const AddProduct = () => {
             name="name"
             required
           />
-
           <label htmlFor="description">description</label>
           <input
             type="text"
@@ -115,7 +113,6 @@ const AddProduct = () => {
             name="subdescrb"
             required
           />
-
           <label htmlFor="reviews">reviews</label>
           <input
             type="number"
@@ -133,7 +130,6 @@ const AddProduct = () => {
               ))}
             </select>
           </div>
-
           <label htmlFor="price">Price</label>
           <input
             type="number"
@@ -142,10 +138,8 @@ const AddProduct = () => {
             name="price"
             required
           />
-
           <label htmlFor="Available">Available</label>
           <input type="checkbox" onChange={handlchange} name="available" />
-
           <label htmlFor="rating">Rating</label>
           <input
             type="number"
@@ -154,7 +148,6 @@ const AddProduct = () => {
             name="rating"
             required
           />
-
           <label htmlFor="Descriptionbig">Sub Description</label>
           <textarea
             name="description"
@@ -165,14 +158,19 @@ const AddProduct = () => {
             onChange={handlchange}
             required
           ></textarea>
-          <label htmlFor="">Image</label>
-          <input
-            type="file"
-            name="ImgUrl"
-            onChange={(e) => setFile(e.target.files[0])}
-          />
-
-          <label htmlFor="">color</label>
+          <div className="flex gap-2">
+            <label htmlFor="">Image</label>
+            <input
+              type="file"
+              name="ImgUrl"
+              onChange={(e) => setFile(e.target.files[0])}
+            />
+            <img
+              src={file ? URL.createObjectURL(file) : "img stpid"}
+              alt={file ? "not yet" : "letgsgosogso"}
+            />
+          </div>
+          x<label htmlFor="">color</label>
           <div className="input-color">
             <select name="color" onChange={handlchange}>
               {colorOptions.map((C) => (
@@ -186,7 +184,6 @@ const AddProduct = () => {
               ))}
             </select>
           </div>
-
           <button
             className=" ml-40 rounded-xl p-2 bg-black w-1/2 text-white"
             type="submit"
@@ -199,7 +196,7 @@ const AddProduct = () => {
       <div>
         {" "}
         thigs is th img
-        {file && <img src={file.name} alt="img" />}
+        {/* {file && <img src={file.name} alt="img" />} */}
       </div>
     </>
   );
