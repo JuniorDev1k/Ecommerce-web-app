@@ -65,26 +65,24 @@ const Products = () => {
 
   return (
     <>
-      {/* <FeaturedProducts /> */}
-      <div className="Products-content">
-        <FilterSideBar />
-        <section className="products-left">
-          <header className="">
-            <input type="search" />
-            <ProductsUserProfile />
-          </header>
-          <div className="search">
-            <input
-              type="search"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+      <div className="flex flex-col  pt-20 border-2 border-red-700 min-h-screen	 ">
+        <FeaturedProducts />
+        <div className="Products-content flex ">
+          <FilterSideBar className=" fixed w-40 left-0 bottom-0 border-2 border-black-200 bg-slate-400 p-4 " />
+          <section className="products-left">
+            <div className="search">
+              <input
+                type="search"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </div>
+            <ProductsGrid
+              className="border-4 border-yellow-400 p-2 "
+              data={searchResults}
+              loading={loading}
             />
-          </div>
-          <ProductsGrid data={searchResults} loading={loading} />
-        </section>
-        <div>
-          <h1>Log our bro common u have to leave this page</h1>
-          <button>signout</button>
+          </section>
         </div>
       </div>
     </>

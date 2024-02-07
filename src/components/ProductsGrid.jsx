@@ -13,11 +13,6 @@ const ProductsGrid = (props) => {
       {data.map((p) => {
         const { name, ImgUrl, color } = p;
 
-        let divStyle = {
-          color: color,
-          width: "20px",
-          heigt: "15px",
-        };
         return (
           <>
             <div className="border-2 border-y-stone-500 border-rounded  px-4 flex flex-col gap-4  ">
