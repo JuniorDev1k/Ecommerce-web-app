@@ -1,12 +1,15 @@
-import React, { useState } from "react";
-import { db } from "../../src/config/firebase";
-import { doc, setDoc } from "firebase/firestore";
+import React, { useEffect, useState } from "react";
+import { db, Storage } from "../../src/config/firebase";
+import { doc, addDoc, collection } from "firebase/firestore";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { useNavigate } from "react-router-dom";
 
 const AddProduct = () => {
-  const [file, setFile] = useState("");
+  const [file, setFile] = useState(null);
   const [err, setErr] = useState(false);
+  const [percentg, setPercentg] = useState(null);
   const Navigate = useNavigate();
+  const [data, setData] = useState({});
   const categorise = [
     { name: "Full congif", value: "Full config" },
     { name: "Pieces", value: "Pieces" },
@@ -20,8 +23,40 @@ const AddProduct = () => {
     { name: "Yellow", value: "yellow" },
     { name: "Purple", value: "purple" },
   ];
+  useEffect(() => {
+    const upLoadFile = () => {
+      const productFolderRef = ref(Storage, `ProductsImg/${file.name}`);
+      const upload = uploadBytesResumable(productFolderRef, file);
+      console.log(file);
 
-  const [data, setData] = useState({});
+      upload.on(
+        "state_changed",
+        (snapshot) => {
+          const progress =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log("Upload is " + progress + "% done");
+          switch (snapshot.state) {
+            case "paused":
+              console.log("Upload is paused");
+              break;
+            case "running":
+              console.log("Upload is running");
+              break;
+          }
+        },
+        (error) => {
+          console.log(error);
+        },
+        () => {
+          getDownloadURL(upload.snapshot.ref).then((downloadURL) => {
+            console.log("ing available at : ", downloadURL);
+          });
+        }
+      );
+    };
+    file && upLoadFile();
+  }, [file]);
+
   const handlchange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -31,14 +66,16 @@ const AddProduct = () => {
 
   const AddProduct = async (e) => {
     e.preventDefault();
-    console.log(data);
+    if (file) {
+      setData((prev) => ({ ...prev, ImgUrl: "ProductsImg/" + file.name }));
+    }
     try {
-      await setDoc(doc(db, "Products", data.name), data);
+      await addDoc(collection(db, "Products"), data);
     } catch (err) {
       console.log(err);
       setErr("error creating product,try again");
     } finally {
-      Navigate("/Products");
+      console.log(data);
     }
 
     // Add a new document in collection "Products"
@@ -123,7 +160,12 @@ const AddProduct = () => {
             required
           ></textarea>
           <label htmlFor="">Image</label>
-          <input type="file" />
+          <input
+            type="file"
+            name="ImgUrl"
+            onChange={(e) => setFile(e.target.files[0])}
+          />
+
           <label htmlFor="">color</label>
           <div className="input-color">
             <select name="color" onChange={handlchange}>
@@ -147,6 +189,11 @@ const AddProduct = () => {
           </button>
           <h1>Functionality drop & drag with react Library</h1>
         </form>
+      </div>
+      <div>
+        {" "}
+        thigs is th img
+        {file && <img src={file.name} alt="img" />}
       </div>
     </>
   );
