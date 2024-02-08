@@ -40,7 +40,7 @@ const FeaturedProducts = () => {
                   src={imgurl}
                   alt="featured product"
                 />
-                <h1 className="text-center font-Nunito font-bold text-zinc-400   ">
+                <h1 className="text-center font-Nunito font-bold text-zinc-300   ">
                   {title}
                 </h1>
               </div>

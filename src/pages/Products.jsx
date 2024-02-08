@@ -8,12 +8,8 @@ import {
   where,
   query,
 } from "firebase/firestore";
-import {
-  ProductsUserProfile,
-  FilterSideBar,
-  ProductsGrid,
-  FeaturedProducts,
-} from "../components";
+import { FilterSideBar, ProductsGrid, FeaturedProducts } from "../components";
+// import { CardLogo } from "../../Assets/Icons/CardLogo.png";
 
 const Products = () => {
   // const [Allproducts, setAllProducts] = useState([]);
@@ -46,7 +42,7 @@ const Products = () => {
         const q = query(
           collection(db, "Products"), // Replace 'yourCollectionName' with your Firestore collection name
           where("name", ">=", searchQuery.toLowerCase()), // Perform case-insensitive search
-          where("", "<=", searchQuery.toLowerCase() + "\uf8ff") // Perform case-insensitive search
+          where("name", "<=", searchQuery.toLowerCase() + "\uf8ff") // Perform case-insensitive search
         );
         let results = [];
         const querySnapshot = await getDocs(q);
@@ -68,16 +64,18 @@ const Products = () => {
       <div className="flex flex-col  pt-20 w-screen bg-black ">
         <FeaturedProducts />
         <div className="Products-content flex w-full    ">
-          <FilterSideBar className=" fixed w-1/2 left-0 bottom-0  file: bg-black p-4 " />
+          <FilterSideBar />
           <section className="products-left    ">
-            <div className="search-useInfo  flex justify-between px-10  ">
+            <div className="search-useInfo  gap-24 flex justify-center px-10  ">
               <input
-                className="w-1/2  rounded-xl"
+                className="w-1/2 px-4 border-none
+                  rounded-xl"
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search product ..."
               />
-              <div className="w-1/5 border-2 border-green">
+              <div className="w-1/5 border-2 border-green flex justify-between p-2 items-center ">
                 <img
                   src=""
                   alt=""
@@ -85,14 +83,11 @@ const Products = () => {
                   height="40px"
                   className="rounded-3xl"
                 />
-                <p>DisplayName</p>
+                <p className="text-text">DisplayName</p>
+                {/* <img src={CardLogo} alt="cardLogo" /> */}
               </div>
             </div>
-            <ProductsGrid
-              className="border-4 border-yellow-400 p-2 "
-              data={searchResults}
-              loading={loading}
-            />
+            <ProductsGrid className="" data={searchResults} loading={loading} />
           </section>
         </div>
       </div>
