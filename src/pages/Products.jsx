@@ -65,11 +65,11 @@ const Products = () => {
 
   return (
     <>
-      <div className="flex flex-col  pt-20 border-2 border-red-700 min-h-screen	 ">
+      <div className="flex flex-col  pt-20 w-screen ">
         <FeaturedProducts />
-        <div className="Products-content flex ">
-          <FilterSideBar className=" fixed w-40 left-0 bottom-0 border-2 border-black-200 bg-slate-400 p-4 " />
-          <section className="products-left">
+        <div className="Products-content flex w-full border-2 border-yellow-500  ">
+          <FilterSideBar className=" fixed w-1/2 left-0 bottom-0 border-2 border-black-200 bg-black p-4 " />
+          <section className="products-left  border-2 border-red-600  ">
             <div className="search">
               <input
                 type="search"

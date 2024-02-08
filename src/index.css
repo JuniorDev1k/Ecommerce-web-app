@@ -96,3 +96,7 @@ input {
 .signup-container {
   box-shadow: 0 4px 6px -6px rgb(192, 187, 187);
 }
+.slide-bottom {
+  width: 150px;
+  height: 100px;
+}

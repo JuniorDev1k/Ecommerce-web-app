@@ -12,63 +12,40 @@ import imag3 from "../../Assets/Images/unsplash_SsI775V5cDU.png";
 import imag4 from "../../Assets/Images/joshua-ng-1sSfrozgiFk-unsplash.jpg";
 
 const FeaturedProducts = () => {
+  // currently manullay adding featured products , later we can make dynamic ( from DB )
+  const FeatureProductCards = [
+    { id: 1, imgurl: imag1, title: " Remote Controlletr" },
+    { id: 2, imgurl: imag2, title: " Remote Controlletr" },
+    { id: 3, imgurl: imag3, title: " Remote Controlletr" },
+    { id: 4, imgurl: imag4, title: " Remote Controlletr" },
+    { id: 5, imgurl: imag1, title: " Remote Controlletr" },
+  ];
   return (
-    <div>
-      {" "}
-      <h1>Featured Products</h1>{" "}
-    </div>
-    // <Swiper
-    //   // install Swiper modules
-    //   modules={[Navigation, Pagination, Scrollbar, A11y]}
-    //   slidesPerView={1}
-    //   navigation
-    //   pagination={{ clickable: true }}
-    //   scrollbar={{ draggable: true }}
-    //   onSwiper={(swiper) => console.log(swiper)}
-    //   onSlideChange={() => console.log("slide change")}
-    // >
-    //   <SwiperSlide>
-    //     <div>
-    //       <img className="slide-bottom" src={imag1} alt="images" />
-    //       <div>
-    //         <h1>wsp Product</h1>
-    //         <p>70$</p>
-    //         <p>GG well palyed</p>
-    //       </div>
-    //     </div>
-    //   </SwiperSlide>
-    //   <SwiperSlide>
-    //     <div>
-    //       <img className="slide-bottom" src={imag2} alt="images" />
-    //       <div>
-    //         <h1>best Product</h1>
-    //         <p>120$</p>
-    //         <p>best for contrubuting</p>
-    //       </div>
-    //     </div>
-    //   </SwiperSlide>
-
-    //   <SwiperSlide>
-    //     <div>
-    //       <img className="slide-bottom" src={imag3} alt="images" />
-    //       <div>
-    //         <h1>Hight Product</h1>
-    //         <p>160$</p>
-    //         <p>GG wellplated</p>
-    //       </div>
-    //     </div>
-    //   </SwiperSlide>
-    //   <SwiperSlide>
-    //     <div>
-    //       <img className="slide-bottom" src={imag4} alt="images" />
-    //       <div>
-    //         <h1>best Product</h1>
-    //         <p>500$</p>
-    //         <p>mder fker</p>
-    //       </div>
-    //     </div>
-    //   </SwiperSlide>
-    // </Swiper>
+    <>
+      <h1 className="m-20 mb-10 text-2xl  "> Featured Products</h1>
+      <div className="grid grid-cols-5 gap-4 px-6  mb-20 max-w-full">
+        {FeatureProductCards.map((c) => {
+          const { id, imgurl, title } = c;
+          return (
+            <>
+              <div className=" relative " key={id}>
+                <span className="absolute top-0 right-2  bg-yellow-500 p-1 border-spacing-x-2  ">
+                  #1
+                </span>
+                <img
+                  className="h-full rounded-2xl"
+                  src={imgurl}
+                  alt="featured product"
+                />
+                <h1 className="text-center font-Nunito font-bold   ">
+                  {title}
+                </h1>
+              </div>
+            </>
+          );
+        })}
+      </div>
+    </>
   );
 };
 

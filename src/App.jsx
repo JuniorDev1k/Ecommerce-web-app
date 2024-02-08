@@ -19,15 +19,15 @@ const App = () => {
     // we setup the routing
     <>
       <AuthProvider>
-        <Nav />
+        {/* <Nav /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route
             path="/Products"
             element={
-              <ForProducts>
-                <Products />
-              </ForProducts>
+              // <ForProducts>
+              <Products />
+              // </ForProducts>
             }
           />
           <Route path="/Admin" element={<AddProducts />} />
