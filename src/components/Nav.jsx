@@ -22,7 +22,7 @@ const Nav = () => {
     <nav className=" bg-transparent p-5 flex justify-between absolute top-0 left-0 right-0 ">
       <Logo className=" text font-robotto " />
       {/* our Navigation Links */}
-      <ul className="md:flex justify-center gap-2  md:gap-10   flex-1  text-text font-robotto text-l items-center  tracking-wider hidden md:visible">
+      <ul className="md:flex justify-center gap-2  md:gap-10   flex-1  text-xl text-text font-robotto text-l items-center  tracking-wider hidden md:visible">
         {Links.map((i) => {
           const { id, Lname, href } = i;
           return (

@@ -17,13 +17,16 @@ const FeaturedProducts = () => {
     { id: 1, imgurl: imag1, title: " Remote Controlletr" },
     { id: 2, imgurl: imag2, title: " Remote Controlletr" },
     { id: 3, imgurl: imag3, title: " Remote Controlletr" },
-    { id: 4, imgurl: imag4, title: " Remote Controlletr" },
+    { id: 4, imgurl: imag2, title: " Remote Controlletr" },
     { id: 5, imgurl: imag1, title: " Remote Controlletr" },
   ];
   return (
     <>
-      <h1 className="m-20 mb-10 text-2xl  "> Featured Products</h1>
-      <div className="grid grid-cols-5 gap-4 px-6  mb-20 max-w-full">
+      <h1 className=" m-20 ml-2 mb-10 text-2xl  text-secondary   ">
+        {" "}
+        Featured Products
+      </h1>
+      <div className="grid grid-cols-5 gap-4 px-6  mb-20 max-w-full cursor-pointer ">
         {FeatureProductCards.map((c) => {
           const { id, imgurl, title } = c;
           return (
@@ -37,7 +40,7 @@ const FeaturedProducts = () => {
                   src={imgurl}
                   alt="featured product"
                 />
-                <h1 className="text-center font-Nunito font-bold   ">
+                <h1 className="text-center font-Nunito font-bold text-zinc-400   ">
                   {title}
                 </h1>
               </div>

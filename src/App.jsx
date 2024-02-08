@@ -19,7 +19,7 @@ const App = () => {
     // we setup the routing
     <>
       <AuthProvider>
-        {/* <Nav /> */}
+        <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route

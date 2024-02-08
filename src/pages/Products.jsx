@@ -65,17 +65,28 @@ const Products = () => {
 
   return (
     <>
-      <div className="flex flex-col  pt-20 w-screen ">
+      <div className="flex flex-col  pt-20 w-screen bg-black ">
         <FeaturedProducts />
-        <div className="Products-content flex w-full border-2 border-yellow-500  ">
-          <FilterSideBar className=" fixed w-1/2 left-0 bottom-0 border-2 border-black-200 bg-black p-4 " />
-          <section className="products-left  border-2 border-red-600  ">
-            <div className="search">
+        <div className="Products-content flex w-full    ">
+          <FilterSideBar className=" fixed w-1/2 left-0 bottom-0  file: bg-black p-4 " />
+          <section className="products-left    ">
+            <div className="search-useInfo  flex justify-between px-10  ">
               <input
-                type="search"
+                className="w-1/2  rounded-xl"
+                type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
+              <div className="w-1/5 border-2 border-green">
+                <img
+                  src=""
+                  alt=""
+                  width="40px"
+                  height="40px"
+                  className="rounded-3xl"
+                />
+                <p>DisplayName</p>
+              </div>
             </div>
             <ProductsGrid
               className="border-4 border-yellow-400 p-2 "
