@@ -1,13 +1,19 @@
 import React from "react";
+// this compponents is responsable for displaying all the product  + product search
 
 const ProductsGrid = (props) => {
   const { data, loading } = props;
+  console.log(data); // testing
 
-  // this compponents is responsable for displaying all the product , + product search
   return (
     <div className="grid grid-cols-1 sm:grid-cols-4  place-content-center p-4  gap-4  ">
-      {loading && (
-        <div>Loading....................................................</div>
+      {loading && ( // Loading
+        <div>
+          {" "}
+          <p className="text-blue-400 p-10  text-2xl ">
+            Loading....................................................
+          </p>{" "}
+        </div>
       )}
       data ? (
       {data.map((p) => {

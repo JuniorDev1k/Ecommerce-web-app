@@ -12,18 +12,19 @@ import { FilterSideBar, ProductsGrid, FeaturedProducts } from "../components";
 // import { CardLogo } from "../../Assets/Icons/CardLogo.png";
 
 const Products = () => {
-  // const [Allproducts, setAllProducts] = useState([]);
+  const [allProducts, setAllProducts] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchProducts = async () => {
+      // Get all products if search query is empty
       if (searchQuery.trim() == "") {
         setSearchResults([]);
         let results = [];
         try {
-          setLoading(true);
+          setLoading(true); // fetching all the products ( first render)
           const querySnapshot = await getDocs(collection(db, "Products"));
           querySnapshot.forEach((doc) => {
             results.push({ id: doc.id, ...doc.data() });
@@ -34,21 +35,19 @@ const Products = () => {
           console.log("err fetching all products ");
         } finally {
           setLoading(false);
+          setAllProducts(results);
         }
       }
       // Whene we Search
       try {
         setLoading(true);
-        const q = query(
-          collection(db, "Products"), // Replace 'yourCollectionName' with your Firestore collection name
-          where("name", ">=", searchQuery.toLowerCase()), // Perform case-insensitive search
-          where("name", "<=", searchQuery.toLowerCase() + "\uf8ff") // Perform case-insensitive search
+        const filtered = allProducts.filter((product) =>
+          product.name.toLowerCase().includes(searchQuery.toLowerCase())
         );
-        let results = [];
-        const querySnapshot = await getDocs(q);
-        querySnapshot.forEach((doc) => {
-          results.push({ id: doc.id, ...doc.data() });
-        });
+        setSearchResults(filtered);
+
+        console.log(results); // testing.
+
         setSearchResults(results);
       } catch (error) {
         console.log(error);
@@ -62,7 +61,7 @@ const Products = () => {
   return (
     <>
       <div className="flex flex-col  pt-20 w-screen bg-black ">
-        <FeaturedProducts />
+        <FeaturedProducts /> // featured products cards
         <div className="Products-content flex w-full    ">
           <FilterSideBar />
           <section className="products-left    ">

@@ -15,7 +15,11 @@ const Header = () => {
           <h1 className="text-l   max-sm:text-sm">
             SEARCH YOUR DESIRED PIECES
           </h1>
-          <Button button="NAVIGATE" />
+          {/* <Button button="NAVIGATE" /> */}
+          {/* <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">
+            
+          </button> */}
+          <Button />
         </div>
       </div>
 
@@ -23,7 +27,11 @@ const Header = () => {
         <div className="   lg:w-1/3 w-1/2  ">
           <h1 className="text-3xl max-sm:text-lg "> WHO WE ARE</h1>
           <h1 className="text-l max-sm:text-sm   "> DISCOVER US </h1>
-          <Button button="OUR STORY" />
+          {/* <Button button="OUR STORY" /> */}
+          {/* <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">
+            Responsive
+          </button> */}
+          <Button />
         </div>
       </div>
     </header>

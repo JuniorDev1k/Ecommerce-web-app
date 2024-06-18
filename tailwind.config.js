@@ -13,7 +13,7 @@ export default {
       logo: "Ribeye ",
     },
 
-    // Typography
+    // Typography`
     extend: {
       colors: {
         text: "#FFFFFF",
@@ -25,5 +25,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [[require("daisyui")]],
 };
