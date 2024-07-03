@@ -3,8 +3,7 @@ import React from "react";
 
 const ProductsGrid = (props) => {
   const { data, loading } = props;
-  console.log(data); // testing
-
+  // console.log("this is from the child components : i found this : ", data);  Testing
   return (
     <div className="grid grid-cols-1 sm:grid-cols-4  place-content-center p-4  gap-4  ">
       {loading && ( // Loading
@@ -17,18 +16,21 @@ const ProductsGrid = (props) => {
       )}
       data ? (
       {data.map((p) => {
-        const { name, ImgUrl, color } = p;
+        const { name, ImgUrl, color, id } = p;
 
         return (
           <>
-            <div className="w-3/4  placeholder:  border-2 border-slate-400  ">
+            <div
+              className="w-3/4  placeholder:  border-2 border-slate-400  "
+              key={id}
+            >
               <img className="" src={ImgUrl} alt="cykablyat" />
               <h1 className="text-center text-zinc-300  "> {name}</h1>
             </div>
           </>
         );
       })}
-      ): (<h1 className="text-2xl text-secondary ">No fuckinggg Products</h1>)
+      ): (<h1 className="text-2xl text-secondary ">Theres No Products</h1>)
     </div>
   );
 };

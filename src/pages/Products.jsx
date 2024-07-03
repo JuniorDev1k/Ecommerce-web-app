@@ -17,46 +17,43 @@ const Products = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  // Fetch all products on initial render :
   useEffect(() => {
     const fetchProducts = async () => {
-      // Get all products if search query is empty
-      if (searchQuery.trim() == "") {
-        setSearchResults([]);
-        let results = [];
-        try {
-          setLoading(true); // fetching all the products ( first render)
-          const querySnapshot = await getDocs(collection(db, "Products"));
-          querySnapshot.forEach((doc) => {
-            results.push({ id: doc.id, ...doc.data() });
-          });
-          setSearchResults(results);
-          return;
-        } catch (error) {
-          console.log("err fetching all products ");
-        } finally {
-          setLoading(false);
-          setAllProducts(results);
-        }
-      }
-      // Whene we Search
+      let results = [];
+
       try {
         setLoading(true);
-        const filtered = allProducts.filter((product) =>
-          product.name.toLowerCase().includes(searchQuery.toLowerCase())
-        );
-        setSearchResults(filtered);
-
-        console.log(results); // testing.
-
+        const querySnapshot = await getDocs(collection(db, "Products"));
+        querySnapshot.forEach((doc) => {
+          results.push({ id: doc.id, ...doc.data() });
+        });
+        console.log(results);
+        setAllProducts(results);
         setSearchResults(results);
       } catch (error) {
-        console.log(error);
+        console.log("error  fetching all products ", error);
       } finally {
         setLoading(false);
       }
     };
     fetchProducts();
-  }, [searchQuery]);
+  }, []);
+
+  // filtering products based on searchQuery
+  useEffect(() => {
+    // console.log("Filtering products:", allProducts, searchQuery);  Testing
+
+    if (searchQuery.trim() == "") {
+      setSearchResults(allProducts); // if the search query is empty  : display all products
+    } else {
+      const filtered = allProducts.filter((product) =>
+        product.name.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+      // console.log("filtered prodcuts :" , filtered); Testing
+      setSearchResults(filtered);
+    }
+  }, [searchQuery, allProducts]);
 
   return (
     <>
@@ -64,6 +61,7 @@ const Products = () => {
         <FeaturedProducts /> // featured products cards
         <div className="Products-content flex w-full    ">
           <FilterSideBar />
+
           <section className="products-left    ">
             <div className="search-useInfo  gap-24 flex justify-center px-10  ">
               <input
@@ -86,7 +84,8 @@ const Products = () => {
                 {/* <img src={CardLogo} alt="cardLogo" /> */}
               </div>
             </div>
-            <ProductsGrid className="" data={searchResults} loading={loading} />
+
+            <ProductsGrid data={searchResults} loading={loading} />
           </section>
         </div>
       </div>
