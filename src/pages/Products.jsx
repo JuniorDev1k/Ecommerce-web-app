@@ -20,7 +20,7 @@ const Products = () => {
   const [loading, setLoading] = useState(false);
   const [selectedcategory, setSelectedcategory] = useState("");
   const [selectedcolor, setSelectedcolor] = useState("");
-  // const [selectedprice, setSelectedprice] = useState("");
+  const [price, setPrice] = useState(50);
 
   // Fetch all products on initial render :
   useEffect(() => {
@@ -54,19 +54,28 @@ const Products = () => {
       ); //
     }
     if (selectedcategory) {
-      console.log(selectedcategory);
+      //  console.log(selectedcategory)  testing
       results = results.filter(
         (product) => product.category === selectedcategory
       );
     }
 
     if (selectedcolor) {
-      console.log(selectedcolor);
+      //  console.log(selectedcolor)  testing
+
       results = results.filter((product) => product.color === selectedcolor);
+    }
+    if (price) {
+      //  console.log(price)  testing
+      results = results.filter((product) => product.price <= price);
     }
 
     setFilterdproducts(results); // search query is empty  : display all products
-  }, [searchQuery, allProducts, selectedcategory, selectedcolor]);
+  }, [searchQuery, allProducts, selectedcategory, selectedcolor, price]);
+
+  const ResetFilter = () => {
+    setFilterdproducts(allProducts);
+  };
 
   return (
     <>
@@ -76,6 +85,9 @@ const Products = () => {
           <FilterSideBar
             selected={setSelectedcategory}
             setcolor={setSelectedcolor}
+            prix={price}
+            setprix={setPrice}
+            Reset={ResetFilter}
           />
 
           <section className="products-left">
