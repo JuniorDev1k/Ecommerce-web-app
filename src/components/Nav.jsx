@@ -8,7 +8,7 @@ import { Links } from "../data";
 const Nav = () => {
   // toggle functionality for small screen
   const [toggle, setToggle] = useState(false);
-  const { currentuser, Logout } = useAuth();
+  const { currentuser, Logout } = useAuth(); // userState
 
   const signout = async () => {
     try {
