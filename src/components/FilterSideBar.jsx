@@ -1,6 +1,7 @@
 import React from "react";
+import { colorOptions } from "../data";
 
-const FilterSideBar = ({ selected }) => {
+const FilterSideBar = ({ selected, setcolor }) => {
   const CategoryNames = [
     { id: 1, name: "Full config" },
     { id: 2, name: "Pieces" },
@@ -9,6 +10,10 @@ const FilterSideBar = ({ selected }) => {
 
   const FilterCategory = (category) => {
     selected(category);
+  };
+  const FilterColor = (c) => {
+    setcolor(c);
+    // console.log(c)
   };
 
   return (
@@ -43,11 +48,21 @@ const FilterSideBar = ({ selected }) => {
           Colors
         </h1>
         <div className="flex justify-center gap-1  ">
-          <button className="p-3 bg-black rounded-3xl"></button>
-          <button className="p-3 bg-blue-400 rounded-3xl"></button>
-          <button className="p-3 bg-white rounded-3xl"></button>
-          <button className="p-3 bg-yellow-200 rounded-3xl"></button>
-          <button className="p-3 bg-green-300 rounded-3xl"></button>
+          {colorOptions.map((color) => {
+            return (
+              <>
+                <button
+                  style={{
+                    backgroundColor: color.value,
+                    height: "15px",
+                    width: "15px",
+                    borderRadius: 5,
+                  }}
+                  onClick={() => FilterColor(color.value)}
+                ></button>
+              </>
+            );
+          })}
         </div>
         <button className="bg-black p-2 rounded-xl px-2 font-poppins text-xl mt-10 ml-4 ">
           {" "}

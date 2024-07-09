@@ -19,7 +19,7 @@ const Products = () => {
   // const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [selectedcategory, setSelectedcategory] = useState("");
-  // const [selectedcolor, setSelectedcolor] = useState("");
+  const [selectedcolor, setSelectedcolor] = useState("");
   // const [selectedprice, setSelectedprice] = useState("");
 
   // Fetch all products on initial render :
@@ -60,15 +60,23 @@ const Products = () => {
       );
     }
 
+    if (selectedcolor) {
+      console.log(selectedcolor);
+      results = results.filter((product) => product.color === selectedcolor);
+    }
+
     setFilterdproducts(results); // search query is empty  : display all products
-  }, [searchQuery, allProducts, selectedcategory]);
+  }, [searchQuery, allProducts, selectedcategory, selectedcolor]);
 
   return (
     <>
       <div className="flex flex-col  pt-20 w-screen bg-black ">
         <FeaturedProducts /> // featured products cards
         <div className="Products-content flex w-full">
-          <FilterSideBar selected={setSelectedcategory} />
+          <FilterSideBar
+            selected={setSelectedcategory}
+            setcolor={setSelectedcolor}
+          />
 
           <section className="products-left">
             <div className="search-useInfo  gap-24 flex justify-center px-10  ">

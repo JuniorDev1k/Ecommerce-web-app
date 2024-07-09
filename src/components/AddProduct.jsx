@@ -4,6 +4,7 @@ import { doc, addDoc, collection } from "firebase/firestore";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { useNavigate } from "react-router-dom";
 import Noimg from "../../Assets/Images/image-tools.svg";
+import { colorOptions } from "../data";
 
 const AddProduct = () => {
   const [file, setFile] = useState(null);
@@ -17,13 +18,6 @@ const AddProduct = () => {
     { name: "Accessory", value: "Accessory" },
   ];
 
-  const colorOptions = [
-    { name: "Red", value: "red" },
-    { name: "Black", value: "black" },
-    { name: "Blue", value: "blue" },
-    { name: "Yellow", value: "yellow" },
-    { name: "Purple", value: "purple" },
-  ];
   useEffect(() => {
     const upLoadFile = () => {
       // uploading product image
@@ -191,7 +185,6 @@ const AddProduct = () => {
           >
             Create Product
           </button>
-          <h1>Functionality drop & drag with react Library</h1>
         </form>
       </div>
       <div>

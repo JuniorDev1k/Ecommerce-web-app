@@ -115,3 +115,10 @@ export const categoryS = [
     // img: imag7,
   },
 ];
+export const colorOptions = [
+  { name: "Red", value: "red" },
+  { name: "Black", value: "black" },
+  { name: "Blue", value: "blue" },
+  { name: "Yellow", value: "yellow" },
+  { name: "Purple", value: "purple" },
+];
