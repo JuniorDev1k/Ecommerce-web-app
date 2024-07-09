@@ -1,8 +1,7 @@
 import React from "react";
 // this compponents is responsable for displaying all the product  + product search
 
-const ProductsGrid = (props) => {
-  const { data, loading } = props;
+const ProductsGrid = ({ data, loading }) => {
   // console.log("this is from the child components : i found this : ", data);  Testing
   return (
     <div className="grid grid-cols-1 sm:grid-cols-4  place-content-center p-4  gap-4  ">

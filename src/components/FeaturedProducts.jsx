@@ -31,7 +31,7 @@ const FeaturedProducts = () => {
           const { id, imgurl, title } = c;
           return (
             <>
-              <div className=" relative " key={id}>
+              <div className=" relative " key={c.id}>
                 <span className="absolute top-0 right-2  bg-yellow-500 p-1 border-spacing-x-2  ">
                   #1
                 </span>

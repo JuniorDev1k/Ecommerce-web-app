@@ -12,7 +12,7 @@ const AddProduct = () => {
   const Navigate = useNavigate();
   const [data, setData] = useState({});
   const categorise = [
-    { name: "Full congif", value: "Full config" },
+    { name: "Full config", value: "Full config" },
     { name: "Pieces", value: "Pieces" },
     { name: "Accessory", value: "Accessory" },
   ];
@@ -84,7 +84,7 @@ const AddProduct = () => {
       setErr("error creating product,try again");
     } finally {
       // console.log(data);
-      // success adding product
+      alert("Created product successfully !!!!");
     }
   };
 
