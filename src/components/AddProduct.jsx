@@ -12,6 +12,7 @@ const AddProduct = () => {
   const [percentg, setPercentg] = useState(null);
   const Navigate = useNavigate();
   const [data, setData] = useState({});
+  const [created, setCreated] = useState(false);
   const categorise = [
     { name: "Full config", value: "Full config" },
     { name: "Pieces", value: "Pieces" },
@@ -77,13 +78,33 @@ const AddProduct = () => {
       console.log(err);
       setErr("error creating product,try again");
     } finally {
-      // console.log(data);
-      alert("Created product successfully !!!!");
+      setCreated(true);
+      setTimeout(() => {
+        setCreated(false);
+      }, 3000);
     }
   };
 
   return (
     <>
+      {created && (
+        <div role="alert" className="alert alert-success m-20 ">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6 shrink-0 stroke-current"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          <span>Your purchase has been confirmed!</span>
+        </div>
+      )}
       <div className="form-product flex flex-col items-center justify-center p-2 ">
         {err && <h1 className="text-red 500">{err}</h1>}
         <h1 className="mb-10 text-2xl text-red-500  ">Admin Dashboard</h1>
