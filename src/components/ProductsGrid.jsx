@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 // this compponents is responsable for displaying all the product  + product search
 
 const ProductsGrid = ({ data, loading }) => {
@@ -16,16 +17,22 @@ const ProductsGrid = ({ data, loading }) => {
       data ? (
       {data.map((p) => {
         const { name, ImgUrl, color, id } = p;
+        // const ProductUrl = "Products/" + id;
 
         return (
           <>
-            <div
+            <li
               className="w-3/4  placeholder:  border-2 border-slate-400  "
               key={id}
             >
-              <img className="" src={ImgUrl} alt="cykablyat" />
-              <h1 className="text-center text-zinc-300  "> {name}</h1>
-            </div>
+              <Link to={id}>
+                {" "}
+                <img className="" src={ImgUrl} alt="cykablyat" />
+                <h1 className="text-center text-zinc-300  "> {name}</h1>
+              </Link>
+
+              <button>Order now</button>
+            </li>
           </>
         );
       })}

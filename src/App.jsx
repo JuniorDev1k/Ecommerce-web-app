@@ -22,16 +22,11 @@ const App = () => {
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route
-            path="/Products"
-            element={
-              // <ForProducts>
-              <Products />
-              // </ForProducts>
-            }
-          />
+
+          <Route path="/Products" element={<Products />} />
+          <Route path="Products/:productId" element={<SignlProduct />} />
+
           <Route path="/Admin" element={<AddProducts />} />
-          <Route path="/Products/4" element={<SignlProduct />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/Login" element={<Login />} />
           <Route path="*" element={<Error />} />
