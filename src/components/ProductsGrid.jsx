@@ -18,7 +18,6 @@ const ProductsGrid = ({ data, loading }) => {
       {data.map((p) => {
         const { name, ImgUrl, color, id } = p;
         // const ProductUrl = "Products/" + id;
-
         return (
           <>
             <li
