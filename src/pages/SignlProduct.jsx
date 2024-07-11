@@ -44,20 +44,20 @@ const SignlProduct = () => {
           <Link to="/Products">{signlproduct?.category} &gt;</Link>
           <Link to={"/Products/" + signlproduct?.id}>{signlproduct?.name}</Link>
         </div>
-        <main className="product-Dtaails min-h-screen ">
-          <section className="prodcut-dettials-header h-80 py-20 border-red-600  ">
-            <div className="product-picture w-2/3">
+        <main className="product-Dtaails">
+          <section className="prodcut-dettials-header  border-red-600  ">
+            <div className="product-picture">
               <img
-                className="w-full h-full"
+                className=""
                 src={signlproduct?.ImgUrl}
                 alt="Procut-Picture"
               />
             </div>
 
-            <div className="product-info-left">dd</div>
+            <div className="product-info-left"></div>
           </section>
           <section className="prodcut-dettials-bottom">
-            the second section{" "}
+            the second section of the bottom dettails and shiping.
           </section>
         </main>
         ll
