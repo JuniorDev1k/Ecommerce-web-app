@@ -1,10 +1,10 @@
 import React from "react";
 
-const SBrand = (porps) => {
+const SBrand = ({ brand }) => {
   // const { img } = brand.props
   return (
     <div>
-      <img src="" alt="brand name" />
+      <img src={brand} alt="brand name" />
     </div>
   );
 };
