@@ -102,7 +102,7 @@ const AddProduct = () => {
               d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
             />
           </svg>
-          <span>Your purchase has been confirmed!</span>
+          <span>Product Added!</span>
         </div>
       )}
       <div className="form-product flex flex-col items-center justify-center p-2 ">
