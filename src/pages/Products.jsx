@@ -80,7 +80,7 @@ const Products = () => {
   return (
     <>
       <div className="flex flex-col  pt-20 w-screen bg-black ">
-        <FeaturedProducts /> // featured products cards
+        <FeaturedProducts />
         <div className="Products-content flex w-full">
           <FilterSideBar
             selected={setSelectedcategory}
