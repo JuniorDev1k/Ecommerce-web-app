@@ -5,7 +5,12 @@ import { db } from "../config/firebase";
 import { Link } from "react-router-dom";
 import brandLogo from "../../Assets/Images/unsplash_oOP4Qo-jF3w.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+
+import { faShieldHeart } from "@fortawesome/free-solid-svg-icons";
+import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
+import { faCashRegister } from "@fortawesome/free-solid-svg-icons";
+import { faTag } from "@fortawesome/free-solid-svg-icons";
 
 // This Page is responsible for Displaying the Dettials of the Uniq Product
 const SignlProduct = () => {
@@ -51,7 +56,10 @@ const SignlProduct = () => {
           <div>{/* skeleton ui */} Lodingg..............................</div>
         )}
         {order && (
-          <div role="alert" className="alert shadow-lg fixed top-0 ">
+          <div
+            role="alert"
+            className="alert shadow-lg fixed top-0 duration-200	"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -98,7 +106,7 @@ const SignlProduct = () => {
               />
             </div>
             <div className="product-info-left">
-              <div className="flex  flex-col gap-8">
+              <div className="flex  flex-col gap-10">
                 <h1 className="md:text-3xl text-2xl  font-Nunito ">
                   {signlproduct?.name}
                 </h1>
@@ -155,7 +163,7 @@ const SignlProduct = () => {
                       <p className="text-red-600"> Unavailable </p>
                     )}
                   </div>
-                  <div className="price flex gap-12 mt-4 ">
+                  <div className="price flex gap-12 mt-4  ">
                     <p className="decoration-dashed decoration-red-500 text-sm">
                       {signlproduct?.price} $
                     </p>
@@ -166,15 +174,45 @@ const SignlProduct = () => {
                   </div>
                 </div>
               </div>
-              <div>
+              <div className="flex justify-between items-center  gap-4 my-10 sm:my-0 ">
                 <button
                   onClick={orderItem}
-                  className=" bg-slate-950 rounded-md mt-8 p-4 px-10 "
+                  className=" bg-slate-950 rounded-md mt-12 p-4 px-10 hover:opacity-80 duration-100	 "
                 >
-                  <FontAwesomeIcon icon="fa-solid fa-cart-shopping" />; Order
-                  Now
+                  <FontAwesomeIcon className="mr-2" icon={faCartShopping} />
+                  Order Now
                 </button>
-                <div className="dettails"></div>
+                <div className="dettails grid sm:grid-cols-2 grid-cols-1 gap-2 sm:gap-8 text-sm ">
+                  <span>
+                    {" "}
+                    <FontAwesomeIcon
+                      className="mr-2"
+                      icon={faCashRegister}
+                    />{" "}
+                    Service payments
+                  </span>
+                  <span>
+                    {" "}
+                    <FontAwesomeIcon
+                      className="mr-2"
+                      icon={faShieldHeart}
+                    />{" "}
+                    Free returns
+                  </span>
+                  <span>
+                    {" "}
+                    <FontAwesomeIcon className="mr-2" icon={faTag} /> Free
+                    shipping
+                  </span>
+                  <span>
+                    {" "}
+                    <FontAwesomeIcon
+                      className="mr-2"
+                      icon={faBagShopping}
+                    />{" "}
+                    Safty certified
+                  </span>
+                </div>
               </div>
             </div>
           </section>
