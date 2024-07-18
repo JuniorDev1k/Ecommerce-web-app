@@ -6,7 +6,7 @@ const ProductsGrid = ({ data, loading }) => {
   // console.log("this is from the child components : i found this : ", data);  Testing
   return (
     <div className="grid grid-cols-1 sm:grid-cols-4  place-content-center p-4  gap-4  ">
-      {loading && ( // Loading
+      {loading && (
         <div>
           {" "}
           <p className="text-blue-400 p-10  text-2xl ">
@@ -26,7 +26,7 @@ const ProductsGrid = ({ data, loading }) => {
             >
               <Link to={id}>
                 {" "}
-                <img className="" src={ImgUrl} alt="cykablyat" />
+                <img className="" src={p?.ImgUrl} alt="cykablyat" />
                 <h1 className="text-center text-zinc-300  "> {name}</h1>
               </Link>
 

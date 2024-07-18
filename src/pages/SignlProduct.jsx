@@ -3,6 +3,9 @@ import { useParams } from "react-router-dom";
 import { getDoc, doc } from "firebase/firestore";
 import { db } from "../config/firebase";
 import { Link } from "react-router-dom";
+import brandLogo from "../../Assets/Images/unsplash_oOP4Qo-jF3w.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 // This Page is responsible for Displaying the Dettials of the Uniq Product
 const SignlProduct = () => {
@@ -32,6 +35,8 @@ const SignlProduct = () => {
 
     fetchProduct();
   }, [productId]);
+
+  // order alert ( boolean value ) .
   const orderItem = () => {
     setOrder(true);
     setTimeout(() => {
@@ -41,7 +46,7 @@ const SignlProduct = () => {
 
   return (
     <>
-      <div className=" p-20 px-10 md:p-40 md:px-20     ">
+      <div className=" p-20 px-10 md:p-40 md:px-20 bg-info-content text-white  ">
         {loading && (
           <div>{/* skeleton ui */} Lodingg..............................</div>
         )}
@@ -70,43 +75,107 @@ const SignlProduct = () => {
           </div>
         )}
         <div className="Links text-sm mb-6 md:text-lg ">
-          <Link className="hover:text-red-400" to="/Products">
-            Products&gt;
+          <Link className="hover:text-red-400 " to="/Products">
+            Products &gt;
           </Link>
-          <Link className="hover:text-red-400" to="/Products">
+          <Link className="hover:text-red-400 " to="/Products">
             {signlproduct?.category} &gt;
           </Link>
           <Link
-            className="hover:text-red-400"
+            className="hover:text-red-400 text-red-600 "
             to={"/Products/" + signlproduct?.id}
           >
-            {signlproduct?.name}
+            <span className="ml-1"> {signlproduct?.name.slice(0, 15)}...</span>
           </Link>
         </div>
-        <main className="product-Dtaails grid grid-cols-1 gap-20 items-center  ">
-          <section className="prodcut-dettials-heade grid grid-cols-2 gap-8  ">
-            <div className="product-picture">
+        <main className="product-Dtaails grid grid-cols-1 sm:gap-20 items-center  font-robotto ">
+          <section className="prodcut-dettials-heade grid grid-cols-1 md:grid-cols-2 md:gap-2 md:h-70  ">
+            <div className="product-picture h-2/3 sm:h-3/4 ">
               <img
-                className="rounded-xl hover:translate-y-2 transition ease-linear  "
+                className="rounded-xl hover:translate-y-2 transition ease-linear  w-2/3 sm:w-3/4 h-full object-fill   "
                 src={signlproduct?.ImgUrl}
                 alt="Procut-Picture"
               />
             </div>
-            <div className="product-info-left px-10">
-              <div>
-                <h2 className="text-center">{signlproduct?.name}</h2>
-                <p>{signlproduct?.subdescrb}</p>
-                <p>{signlproduct?.description}</p>
-                <p>${signlproduct?.price}</p>
-                <p>{signlproduct?.reviews} reviews</p>
-                <h3>Categor : {signlproduct?.category}</h3>
+            <div className="product-info-left">
+              <div className="flex  flex-col gap-8">
+                <h1 className="md:text-3xl text-2xl  font-Nunito ">
+                  {signlproduct?.name}
+                </h1>
+                <div className="prodcut-info text-neutral-content  flex flex-col gap-4">
+                  <div className="grid grid-cols-12 gap-4   ">
+                    <img
+                      className="col-span-2 rounded-full align-top "
+                      src={brandLogo}
+                      alt="brand-logo"
+                    />
+                    <p className="col-span-10  ">{signlproduct?.description}</p>
+                  </div>
+                  <div className="rating-av-rev  flex gap-6">
+                    <div className="rating">
+                      <input
+                        type="radio"
+                        name="rating-2"
+                        className="mask mask-star-2 bg-orange-400"
+                      />
+                      <input
+                        type="radio"
+                        name="rating-2"
+                        className="mask mask-star-2 bg-orange-400"
+                        defaultChecked
+                      />
+                      <input
+                        type="radio"
+                        name="rating-2"
+                        className="mask mask-star-2 bg-orange-400"
+                      />
+                      <input
+                        type="radio"
+                        name="rating-2"
+                        className="mask mask-star-2 bg-orange-400"
+                      />
+                      <input
+                        type="radio"
+                        name="rating-2"
+                        className=" mask mask-star-2 bg-orange-400"
+                      />
+                    </div>
+                    <p>
+                      {" "}
+                      <span className="text-white">
+                        {" "}
+                        {signlproduct?.reviews}{" "}
+                      </span>{" "}
+                      reviews{" "}
+                    </p>
+
+                    {signlproduct?.available ? (
+                      <p className="text-green-600">Available</p>
+                    ) : (
+                      <p className="text-red-600"> Unavailable </p>
+                    )}
+                  </div>
+                  <div className="price flex gap-12 mt-4 ">
+                    <p className="decoration-dashed decoration-red-500 text-sm">
+                      {signlproduct?.price} $
+                    </p>
+                    <p className="text-2xl text-white">
+                      USD {signlproduct?.price / 5} $
+                    </p>
+                    <p className="text-red-600">-20%</p>
+                  </div>
+                </div>
               </div>
-              <button
-                onClick={orderItem}
-                className="p-2 bg-slate-950 rounded-md mt-8"
-              >
-                Order Now
-              </button>
+              <div>
+                <button
+                  onClick={orderItem}
+                  className=" bg-slate-950 rounded-md mt-8 p-4 px-10 "
+                >
+                  <FontAwesomeIcon icon="fa-solid fa-cart-shopping" />; Order
+                  Now
+                </button>
+                <div className="dettails"></div>
+              </div>
             </div>
           </section>
           <section className="prodcut-dettials-bottom grid grid-cols-1 md:grid-cols-3 ">
