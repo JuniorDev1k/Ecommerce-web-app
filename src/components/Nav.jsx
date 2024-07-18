@@ -55,10 +55,10 @@ const Nav = () => {
       <div className="nav-log flex text-text gap-2">
         {currentuser ? (
           <>
-            <div>
-              <p> Wlecome : {currentuser.email} </p>
+            <div className="">
+              <p> Wlecome : {currentuser.email.slice(0, 12)}... </p>
 
-              <p> key : {currentuser.uid} </p>
+              <p> key : {currentuser.displayName.slice(0, 10)}... </p>
             </div>
 
             <button
@@ -68,7 +68,7 @@ const Nav = () => {
               {" "}
               Log Out
             </button>
-            <button onClick={() => setToggle(!toggle)} className="lg:hidden">
+            <button onClick={() => setToggle(!toggle)} className="lg:hidden ">
               X
             </button>
           </>
