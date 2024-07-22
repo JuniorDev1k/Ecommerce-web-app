@@ -81,7 +81,7 @@ const Products = () => {
     <>
       <div className="flex flex-col pt-20 bg-black ">
         <FeaturedProducts />
-        <div className="Products-content flex w-full">
+        <div className="Products-content grid grid-cols-12 w-full  ">
           <FilterSideBar
             selected={setSelectedcategory}
             setcolor={setSelectedcolor}
@@ -90,7 +90,7 @@ const Products = () => {
             Reset={ResetFilter}
           />
 
-          <section className="products-left">
+          <section className="products-left md:col-span-10  ">
             <div className="search-useInfo  gap-24 flex justify-center px-10  ">
               <input
                 className="w-1/2 px-4 border-none
