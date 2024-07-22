@@ -14,6 +14,7 @@ import Footer from "./Footer";
 import Services from "./Services";
 import ProductsGrid from "./ProductsGrid";
 import ProductsUserProfile from "./ProductsUserProfile";
+import ProductDettaills from "./productDettaills";
 
 export {
   About,
@@ -29,4 +30,5 @@ export {
   Services,
   ProductsGrid,
   ProductsUserProfile,
+  ProductDettaills,
 };
