@@ -79,7 +79,7 @@ const Products = () => {
 
   return (
     <>
-      <div className="flex flex-col  pt-20 w-screen bg-black ">
+      <div className="flex flex-col pt-20 bg-black ">
         <FeaturedProducts />
         <div className="Products-content flex w-full">
           <FilterSideBar
