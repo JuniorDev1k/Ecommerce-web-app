@@ -22,11 +22,11 @@ const FeaturedProducts = () => {
   ];
   return (
     <>
-      <h1 className=" m-20 ml-2 mb-10 text-2xl  text-secondary   ">
+      <h1 className=" ml-4 mb-10 m-20   text-3xl  text-secondary  font-robotto	  ">
         {" "}
         Featured Products
       </h1>
-      <div className="grid grid-cols-5 gap-4 px-6  mb-20 max-w-full cursor-pointer ">
+      <div className="grid grid-cols-5 gap-4 px-6  sm:mb-40 mb-20 max-w-full cursor-pointer   ">
         {FeatureProductCards.map((c) => {
           const { id, imgurl, title } = c;
           return (

@@ -47,7 +47,7 @@ const Login = () => {
   return (
     <>
       <div className="flex justify-center items-center  h-screen  p-4  ">
-        <div className="signup-container flex flex-col border-2 p-10 gap-2 rounded-lg items-center w-full sm:w-3/4  md:w-1/2   ">
+        <div className="signup-container flex flex-col  p-10 gap-2 rounded-lg items-center w-full sm:w-3/4  md:w-1/2   ">
           <h1 className="mb-10 text-2xl font-robotto  ">
             Login to our Website
           </h1>
@@ -101,7 +101,7 @@ const Login = () => {
             </button>
           </div>
           <p className="mt-10 font-robotto  ">
-            Dont have an account ?
+            Don't have an account ?
             <Link
               className=" font-bold underline decoration-solid hover:text-black/30 ease-in duration-100 ml-2  "
               to="/signup"

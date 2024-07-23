@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { db } from "../config/firebase";
+
+import { useAuth } from "../Context/userData";
 import {
   doc,
   getDoc,
@@ -10,7 +12,8 @@ import {
 } from "firebase/firestore";
 import { FilterSideBar, ProductsGrid, FeaturedProducts } from "../components";
 import { categoryS } from "../data";
-// import { CardLogo } from "../../Assets/Icons/CardLogo.png";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Products = () => {
   const [allProducts, setAllProducts] = useState([]);
@@ -22,6 +25,8 @@ const Products = () => {
   const [selectedcolor, setSelectedcolor] = useState("");
   const [price, setPrice] = useState(50);
 
+  const { currentuser } = useAuth(); // getting the userState to product page.
+  currentuser && console.log(currentuser);
   // Fetch all products on initial render :
   useEffect(() => {
     let resultss = [];
@@ -90,26 +95,39 @@ const Products = () => {
             Reset={ResetFilter}
           />
 
-          <section className="products-left md:col-span-10  ">
-            <div className="search-useInfo  gap-24 flex justify-center px-10  ">
+          <section className="products-left md:col-span-10 col-span-8 ">
+            <div className="search-useInfo p-4 pt-0 grid grid-cols-8 gap-6    ">
               <input
-                className="w-1/2 px-4 border-none
+                className="px-4 border-none
+              
+                 col-span-6
+                 
                   rounded-xl"
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search product ..."
               />
-              <div className="w-1/5 border-2 border-green flex justify-between p-2 items-center ">
-                <img
-                  src=""
-                  alt=""
-                  width="40px"
-                  height="40px"
-                  className="rounded-3xl"
+              <div className="col-span-2  flex sm:gap-8 gap-2 justify-between items-center  relative  ">
+                <div className="flex gap-2 ">
+                  <img
+                    src={currentuser?.photoURL}
+                    alt=""
+                    width="40px"
+                    height="40px"
+                    className="rounded-3xl"
+                    d
+                  />
+                  <p className="text-neutral-content text-center hidden md:block ">
+                    {currentuser?.displayName}
+                  </p>
+                </div>
+                <div className="w-2 h-2 bg-red-600 absolute md:top-1 md:right-2 -top-2 right-0  rounded-xl p-2 "></div>
+                <FontAwesomeIcon
+                  className="mr-2 "
+                  icon={faCartShopping}
+                  size="xl"
                 />
-                <p className="text-text">DisplayName</p>
-                {/* <img src={CardLogo} alt="cardLogo" /> */}
               </div>
             </div>
             <ProductsGrid data={filterdproducts} loading={loading} />
