@@ -37,7 +37,7 @@ const ProductsGrid = ({ data, loading }) => {
                   </h2>
                   <p>If a dog chews shoes whose shoes does he choose?</p>
                   <div className="card-actions justify-betwween">
-                    <div className="badge badge-outline mb-2 ">Fashion</div>
+                    <div className="badge badge-outline  ">Fashion</div>
                     <div className="badge badge-outline p-2 ">
                       {p?.category}
                     </div>
