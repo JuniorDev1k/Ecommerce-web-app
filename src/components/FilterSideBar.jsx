@@ -15,7 +15,7 @@ const FilterSideBar = ({ selected, setcolor, price, setprix, Reset }) => {
   const FilterPrice = (price) => setprix(price);
 
   return (
-    <div className="text-text bg-red-900 md:col-span-2 col-span-4 py-10   px-2 flex-col   font-poppins rounded-tr-lg sticky top-0   ">
+    <div className="text-text bg-red-800 md:col-span-2 col-span-2 sm:pt-10 flex flex-col justify-between  font-poppins rounded-tr-lg sticky top-0 h-screen   ">
       <div className="mt-4 flex flex-col gap-4    ">
         <h1 className="text-center text-2xl   text-black font-robotto">
           Category
@@ -25,7 +25,7 @@ const FilterSideBar = ({ selected, setcolor, price, setprix, Reset }) => {
           return (
             <>
               <button
-                className="p-2 hover:bg-secondary text-xl"
+                className="p-2 hover:bg-secondary  text-md sm:text-xl transition "
                 onClick={() => FilterCategory(btn.name)}
                 key={btn.id}
               >
@@ -35,8 +35,8 @@ const FilterSideBar = ({ selected, setcolor, price, setprix, Reset }) => {
           );
         })}
       </div>
-      <div className="mt-4">
-        <h1>Price</h1>
+      <div className="mt-4 p-2 ">
+        <h1 className="text-center mb-2">Price</h1>
         <input
           type="range"
           min={1}
@@ -46,7 +46,7 @@ const FilterSideBar = ({ selected, setcolor, price, setprix, Reset }) => {
           className="range"
         />
       </div>
-      <div className="mt-4 flex flex-col gap-4 ">
+      <div className="mt-4 flex flex-col gap-4 p-2  ">
         <h1 className="text-2xl font-robotto text-center  text-black ">
           Colors
         </h1>
@@ -68,11 +68,10 @@ const FilterSideBar = ({ selected, setcolor, price, setprix, Reset }) => {
           })}
         </div>
         <button
-          className="bg-black p-2 rounded-xl px-2 font-poppins text-xl mt-10 ml-4 "
+          className="bg-black p-2 rounded-xl px-2 font-poppins  sm:text-xl    "
           onClick={Reset}
         >
-          {" "}
-          Clear Filters{" "}
+          Clear Filters
         </button>
       </div>
     </div>
