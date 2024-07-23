@@ -1,3 +1,4 @@
+// Product page
 import React, { useState, useEffect } from "react";
 import { db } from "../config/firebase";
 
@@ -51,6 +52,7 @@ const Products = () => {
     fetchProducts();
   }, []);
 
+  // filtering System
   useEffect(() => {
     let results = allProducts;
 
@@ -96,13 +98,13 @@ const Products = () => {
             Reset={ResetFilter}
           />
 
-          <section className="products-left md:col-span-10 col-span-8 ">
+          <section className="products-left md:col-span-10 col-span-10  ">
             <div className="search-useInfo p-4 pt-0 grid grid-cols-8 gap-6    ">
               <input
                 className="px-4 border-none
               
                  col-span-6
-                 
+                 x
                   rounded-xl"
                 type="text"
                 value={searchQuery}
@@ -124,7 +126,7 @@ const Products = () => {
                     {currentuser?.displayName}
                   </p>
                 </div>
-                <div className="w-2 h-2 bg-red-600 absolute md:top-1 md:right-2 -top-2 right-0  rounded-xl p-2 "></div>
+                <div className="w-2 h-2 bg-red-600 absolute md:top-1 md:right-2 -top-2 right-0  rounded-xl  "></div>
                 <FontAwesomeIcon
                   className="mr-2 "
                   icon={faCartShopping}

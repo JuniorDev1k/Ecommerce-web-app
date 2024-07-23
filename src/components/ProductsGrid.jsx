@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const ProductsGrid = ({ data, loading }) => {
   // console.log("this is from the child components : i found this : ", data);  Testing
   return (
-    <div className="grid   md:grid-cols-4 2xl:grid-cols-5  place-content-center sm:p-4  gap-4  ">
+    <div className="grid  sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5  place-content-center sm:p-4 p-8  sm:gap-6 gap-4  ">
       {loading && (
         <div>
           {" "}
@@ -20,43 +20,35 @@ const ProductsGrid = ({ data, loading }) => {
           // const ProductUrl = "Products/" + id;
           return (
             <>
-              <div className="card bg-base-100  shadow-xl">
-                <figure key={id}>
+              <div className="card">
+                <div key={id} className="w-full h-60 ">
                   <Link to={id}>
                     <img
                       src={p?.ImgUrl}
                       alt="product"
-                      className="h-60 w-full object-fill "
+                      className="h-full  w-full object-fill  "
                     />
                   </Link>
-                </figure>
-                <div className="card-body">
-                  <h2 className="card-title flex justify-between ">
-                    {name}
-                    <div className="badge badge-secondary">NEW</div>
+                </div>
+                <div className="card-body shadow-xl bg-red-800 rounded-b-lg ">
+                  <h2 className="card-title flex justify-between text-lg ">
+                    {name.slice(0, 16)}
                   </h2>
-                  <p>If a dog chews shoes whose shoes does he choose?</p>
-                  <div className="card-actions justify-betwween">
-                    <div className="badge badge-outline  ">Fashion</div>
-                    <div className="badge badge-outline p-2 ">
+                  <p>{p?.description.slice(0, 7)}</p>
+                  <div className="card-actions  ">
+                    <div className="badge badge-outline flex-start p-4">
+                      {p?.available ? (
+                        <p className="text-green-600">Available</p>
+                      ) : (
+                        <p className="text-red-600"> Unavailable </p>
+                      )}
+                    </div>
+                    <div className="badge badge-outline p-4 ">
                       {p?.category}
                     </div>
                   </div>
                 </div>
               </div>
-
-              {/* <li
-              className="w-3/4  placeholder:  border-2 border-slate-400  "
-        
-            >
-              
-                {" "}
-                <img className="" src={p?.ImgUrl} alt="cykablyat" />
-                <h1 className="text-center text-zinc-300  "></h1>
-              </Link>
-
-              <button>Order now</button>
-            </li> */}
             </>
           );
         })
