@@ -110,7 +110,7 @@ const AddProduct = () => {
         <h1 className="mb-10 text-2xl text-red-500  ">Admin Dashboard</h1>
         <form
           onSubmit={AddProduct}
-          className={`flex flex-col gap-4 border-2  border-t-gray-900 p-2 w-1/2`}
+          className={`flex flex-col gap-4    p-2 w-1/2`}
         >
           <h1 className="text-center ">Add you Prudct</h1>
           <label htmlFor="title">Product Title</label>
@@ -186,7 +186,7 @@ const AddProduct = () => {
               alt={file ? "not yet" : "letgsgosogso"}
             />
           </div>
-          x<label htmlFor="">color</label>
+          <label htmlFor="">color</label>
           <div className="input-color">
             <select name="color" onChange={handlchange}>
               {colorOptions.map((C) => (
@@ -208,11 +208,7 @@ const AddProduct = () => {
           </button>
         </form>
       </div>
-      <div>
-        {" "}
-        thigs is th img
-        {/* {file && <img src={file.name} alt="img" />} */}
-      </div>
+      <div>{/* {file && <img src={file.name} alt="img" />} */}</div>
     </>
   );
 };
