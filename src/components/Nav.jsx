@@ -7,8 +7,8 @@ import { Links } from "../data";
 //  Navigation Links
 const Nav = () => {
   // toggle functionality for small screen
-  const [toggle, setToggle] = useState(false);
-  const { currentuser, Logout } = useAuth(); // userState
+  const [toggle, setToggle] = useState(false); // toggle state for responsive design
+  const { currentuser, Logout } = useAuth(); // userState: to display username + email on top navbar
 
   const signout = async () => {
     try {
@@ -22,7 +22,7 @@ const Nav = () => {
     <nav className=" bg-transparent p-5 flex justify-between absolute top-0 left-0 right-0 ">
       <Logo className=" text font-robotto " />
       {/* our Navigation Links */}
-      <ul className="md:flex justify-center gap-2  md:gap-10   flex-1  text-xl text-text font-robotto text-l items-center  tracking-wider hidden ">
+      <ul className="sm:flex justify-center hidden    gap-10   flex-1  text-xl text-text  font-robotto text-l items-center  tracking-wider ">
         {Links.map((i) => {
           const { id, Lname, href } = i;
           return (
@@ -71,7 +71,7 @@ const Nav = () => {
               {" "}
               Log Out
             </button>
-            <button onClick={() => setToggle(!toggle)} className="lg:hidden ">
+            <button onClick={() => setToggle(!toggle)} className="md:hidden ">
               X
             </button>
           </>
