@@ -11,9 +11,10 @@ import {
   query,
 } from "firebase/firestore";
 import { FilterSideBar, ProductsGrid, FeaturedProducts } from "../components";
-import { categoryS } from "../data";
+
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import userAavatar from "../../Assets/Images/Avatar.webp";
 
 const Products = () => {
   const [allProducts, setAllProducts] = useState([]);
@@ -111,13 +112,14 @@ const Products = () => {
               <div className="col-span-2  flex sm:gap-8 gap-2 justify-between items-center  relative  ">
                 <div className="flex gap-2 ">
                   <img
-                    src={currentuser?.photoURL}
+                    src={userAavatar}
                     alt=""
                     width="40px"
                     height="40px"
                     className="rounded-3xl"
                     d
                   />
+                  {/* currentuser?.photoURL  */}
                   <p className="text-neutral-content text-center hidden md:block ">
                     {currentuser?.displayName}
                   </p>

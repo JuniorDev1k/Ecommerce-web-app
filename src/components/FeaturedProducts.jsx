@@ -26,7 +26,7 @@ const FeaturedProducts = () => {
         {" "}
         Featured Products
       </h1>
-      <div className="grid grid-cols-5 gap-4 px-6  sm:mb-40 mb-20 max-w-full cursor-pointer   ">
+      <div className="grid grid-cols-5    gap-4 px-6  sm:mb-40 mb-20 max-w-full cursor-pointer   ">
         {FeatureProductCards.map((c) => {
           const { id, imgurl, title } = c;
           return (
