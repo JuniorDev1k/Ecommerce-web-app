@@ -7,17 +7,16 @@ export default {
     // }
 
     fontFamily: {
-      header: ['"Montserrat"'],
-      subheader: ['"Open Sans"'],
+      header: ["Montserrat", "sans-serif"],
+      subheader: ["Open Sans", "sans-serif"],
       paragraph: ['"Noto Sans Georgian"'],
-      poppins: "Poppins",
-      Nunito: "Nunito",
-      robotto: "Roboto",
-      logo: "Ribeye ",
+      poppins: ["Poppins", "sans-serif"],
+      Nunito: ["Nunito", "sans-serif"],
+      robotto: ["Roboto", "sans-serif"],
+      logo: ['"Ribeye"'],
       navLinks: ['"Lato"'],
     },
 
-    // Typography`
     extend: {
       colors: {
         text: "#FFFFFF",

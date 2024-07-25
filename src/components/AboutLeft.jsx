@@ -24,7 +24,7 @@ const AboutLeft = (props) => {
         <h1 className=" text-2xl mb-4 font-header font-semibold -tracking-tighter">
           {year}
         </h1>
-        <p className=" font-paragraph text-lg  font-extralight tracking-wider leading-6 text-text  ">
+        <p className=" font-nunito text-lg  font-thin tracking-wider leading-6 text-text  ">
           {story}
         </p>
       </article>

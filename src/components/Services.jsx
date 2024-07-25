@@ -14,7 +14,10 @@ const Services = () => {
         id="Services"
         className=" services-container min-h-screen flex p-16 gap-10 max-sm:flex-col max-sm:items-center "
       >
-        <div className="felx w-1/2  " data-aos="zoom-in">
+        <div
+          className="felx w-1/2  font-poppins font-semibold "
+          data-aos="zoom-in"
+        >
           <div className=" a2  flex justify-center gap-6  max-sm:flex-col ">
             <Hexagone hex="HIGHT QUALITY PRODUCTS" />
             <Hexagone hex="DELIVERY" />
