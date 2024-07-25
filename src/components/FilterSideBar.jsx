@@ -15,9 +15,9 @@ const FilterSideBar = ({ selected, setcolor, price, setprix, Reset }) => {
   const FilterPrice = (price) => setprix(price);
 
   return (
-    <div className="text-text bg-secondary-0/10  md:col-span-2 col-span-2 sm:pt-10 flex flex-col justify-between  font-poppins rounded-tr-lg sticky top-0 h-screen   ">
+    <div className="text-text bg-secondary-0/10  md:col-span-2 col-span-2 sm:pt-10 flex flex-col justify-between  font-Nunito rounded-tr-2xl sticky top-0 h-screen py-2  p-0     sm:py-0   ">
       <div className="mt-4 flex flex-col gap-4    ">
-        <h1 className="text-center text-3xl   text-black font-subheader -tracking-tighter">
+        <h1 className=" md:text-2xl text-lg  text-center font-subheader -tracking-tighter">
           Category
         </h1>
 
@@ -25,7 +25,7 @@ const FilterSideBar = ({ selected, setcolor, price, setprix, Reset }) => {
           return (
             <>
               <button
-                className="p-2 hover:bg-secondary  text-md sm:text-xl transition "
+                className="   border-2 border-black border-solid  text-md sm:text-xl transition opacity-70 p-2  font-robotto "
                 onClick={() => FilterCategory(btn.name)}
                 key={btn.id}
               >
@@ -35,8 +35,8 @@ const FilterSideBar = ({ selected, setcolor, price, setprix, Reset }) => {
           );
         })}
       </div>
-      <div className="mt-4 p-2 ">
-        <h1 className="text-center mb-2 font-subheader text-black  text-3xl -tracking-tighter ">
+      <div className=" md:p-6 p-2  ">
+        <h1 className="  mb-2 font-subheader   text-center md:text-2xl text-lg -tracking-tighter ">
           Price
         </h1>
         <input
@@ -45,23 +45,23 @@ const FilterSideBar = ({ selected, setcolor, price, setprix, Reset }) => {
           max="3000"
           value={price}
           onChange={(e) => setprix(e.target.value)}
-          className="range"
+          className="range border-0 h-[0.7rem] "
         />
       </div>
-      <div className="mt-4 flex flex-col gap-4 p-2  ">
-        <h1 className="text-3xl  text-center  text-black font-subheader -tracking-tighter  ">
+      <div className=" flex flex-col gap-4 p-2 ">
+        <h1 className="md:text-2xl text-lg    text-center  font-subheader -tracking-tighter  ">
           Colors
         </h1>
-        <div className="flex justify-center gap-1  ">
+        <div className="flex justify-center lg:gap-4 gap-2  ">
           {colorOptions.map((color) => {
             return (
               <>
                 <button
                   style={{
                     backgroundColor: color.value,
-                    height: "15px",
-                    width: "15px",
-                    borderRadius: 5,
+                    height: "1.2rem",
+                    width: "1.2rem",
+                    borderRadius: "50%",
                   }}
                   onClick={() => FilterColor(color.value)}
                 ></button>
@@ -70,7 +70,7 @@ const FilterSideBar = ({ selected, setcolor, price, setprix, Reset }) => {
           })}
         </div>
         <button
-          className="bg-black p-2 rounded-xl px-2 font-poppins  sm:text-xl    "
+          className="bg-black  p-2 rounded-xl font-poppins sm:text-lg   sm:w-1/2 ml-[25%] md:mt-6 mt-2   "
           onClick={Reset}
         >
           Clear Filters

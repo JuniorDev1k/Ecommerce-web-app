@@ -74,6 +74,10 @@
 .trustworthy {
   box-shadow: #df0d0d;
 }
+input[type="range"] {
+  --range-shdw: yellow;
+  background-color: grey;
+}
 input {
   border: 2px solid black;
 }
