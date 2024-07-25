@@ -109,3 +109,39 @@ input {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+#slider {
+  width: 100vw; /* Full viewport width */
+  overflow: hidden; /* Hide overflowed content */
+  position: relative;
+}
+
+#slider-wrapper {
+  /* Use flexbox for horizontal layout */
+  width: 200%; /* Double the width of the viewport to accommodate images */
+  animation: slide 10s linear infinite; /* Adjust duration for sliding speed */
+}
+
+#slide {
+  flex: 1; /* Each slide takes up equal space */
+  min-width: 10rem; /* Ensure slides are full viewport width */
+}
+
+#slide img {
+  width: 100%; /* Make images cover the slide width */
+  display: block;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+    /* Move left by half of the container width */
+  }
+}
+
+#categorySlider {
+  animation: slide 10s linear infinite;
+}
