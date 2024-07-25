@@ -4,6 +4,7 @@ import { useAuth } from "../Context/userData";
 
 import { Link } from "react-router-dom";
 import CompletSignIp from "../components/CompletSignIp";
+import goolgIcon from "../../Assets/Icons/google-color-icon.svg";
 
 // import signUP from context
 
@@ -40,9 +41,9 @@ const Signup = () => {
       {currentuser ? (
         <CompletSignIp />
       ) : (
-        <div className="flex justify-center items-center  h-screen  p-4  ">
-          <div className="signup-container flex flex-col border-2 p-10 gap-2 rounded-lg items-center w-full sm:w-3/4  md:w-1/2   ">
-            <h1 className="mb-10 text-2xl font-robotto  ">
+        <div className=" auth flex justify-center items-center p-4 h-screen ">
+          <div className="signup-container flex flex-col  p-10 gap-2 rounded-lg items-center w-full sm:w-3/4  md:w-1/2   ">
+            <h1 className="mb-4 text-2xl font-robotto  mt-12 sm:mt-4  ">
               Sign Up to our Website
             </h1>
             <form
@@ -51,7 +52,10 @@ const Signup = () => {
             >
               {err}
               <div className="">
-                <label className="" htmlFor="email">
+                <label
+                  className="font-robotto text-text font-medium mb-2"
+                  htmlFor="email"
+                >
                   Email
                 </label>
                 <input
@@ -64,7 +68,10 @@ const Signup = () => {
                 />
               </div>
               <div>
-                <label className="" htmlFor="password">
+                <label
+                  className="font-robotto text-text font-medium mb-2"
+                  htmlFor="password"
+                >
                   Password
                 </label>
                 <input
@@ -80,15 +87,21 @@ const Signup = () => {
               <button
                 hidden={loading}
                 type="submit"
-                className="bg-red-500 rounded-md p-2  hover:text-red-500 text-lg  hover:bg-black ease-in duration-300  "
+                className="bg-secondary-0 rounded-md p-2  hover:text-secondary-0 text-lg  hover:bg-black ease-in duration-300  "
               >
                 SignUp
               </button>
             </form>
             <div className="w-full">
               <h1 className="text-center mt-2 mb-2">OR</h1>
-              <button className="bg-black text-red-500 rounded-md p-2 w-full   hover:text-black hover:bg-red-500 ease-in duration-300 ">
-                SignUp With Google
+              <button className="bg-black text-secondary-0    md:text-xl w-full rounded-md p-4  flex gap-4  items-center font-Nunito font-medium -tracking-tighter  hover:text-black hover:bg-secondary-0 ease-in duration-300 ">
+                <img
+                  src={goolgIcon}
+                  width="25rem"
+                  height="25rem"
+                  alt="Google icon"
+                />
+                <span>SignUp With Google</span>
               </button>
             </div>
             <p className="mt-10 font-robotto  ">
