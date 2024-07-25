@@ -1,15 +1,14 @@
 import React from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 
-const Button = (props) => {
-  const text = props.button;
+const Button = ({ text, link }) => {
   const navigate = useNavigate();
   return (
     <button
-      onClick={() => navigate("/Products")}
-      className="btn btn-xs  bg-red-600 sm:btn-sm md:btn-md lg:btn-lg"
+      onClick={() => navigate(link)}
+      className=" rounded-lg hover:bg-black transition hover:text-red-600  bg-red-600 md:py-4 md:px-24 font-poppins font-medium -tracking-tighter text-lg p-2  "
     >
-      Search Products
+      {text}
     </button>
   );
 };
