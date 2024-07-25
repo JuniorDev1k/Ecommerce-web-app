@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../Context/userData";
 import { Link } from "react-router-dom";
+import goolgIcon from "../../Assets/Icons/google-color-icon.svg";
 
 const Login = () => {
   // user inputs values
@@ -46,18 +47,38 @@ const Login = () => {
 
   return (
     <>
-      <div className="flex justify-center items-center  h-screen  p-4  ">
+      <div className="auth flex justify-center items-center   h-screen p-4  bg-[#FF0000]/40">
         <div className="signup-container flex flex-col  p-10 gap-2 rounded-lg items-center w-full sm:w-3/4  md:w-1/2   ">
-          <h1 className="mb-10 text-2xl font-robotto  ">
+          <h1 className="mb-4 text-2xl font-header text-text font-medium mt-12 sm:mt-4 ">
             Login to our Website
           </h1>
           <form
             className="flex flex-col w-full font-robotto gap-6 min-w-24  "
             onSubmit={handlsubmit}
           >
-            {err}
+            {err && (
+              <div role="alert" className="alert alert-error">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6 shrink-0 stroke-current"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span>{err}.</span>
+              </div>
+            )}
             <div className="">
-              <label className="" htmlFor="email">
+              <label
+                className="font-semibold font-robotto text-text mb-2"
+                htmlFor="email"
+              >
                 Email
               </label>
               <input
@@ -70,7 +91,10 @@ const Login = () => {
               />
             </div>
             <div>
-              <label className="" htmlFor="password">
+              <label
+                className="font-semibold font-robotto text-text mb-2"
+                htmlFor="password"
+              >
                 Password
               </label>
               <input
@@ -86,21 +110,27 @@ const Login = () => {
             <button
               hidden={loading}
               type="submit"
-              className="bg-red-500 rounded-md p-2  hover:text-red-500 text-lg  hover:bg-black ease-in duration-300  "
+              className="bg-secondary-0 rounded-md p-2  hover:text-secondary-0 text-lg text-text hover:bg-black ease-in duration-300  "
             >
               Sign in
             </button>
           </form>
           <div className="w-full">
-            <h1 className="text-center mt-2 mb-2">OR</h1>
+            <h1 className="text-center mt-2 mb-2 text-lg">OR</h1>
             <button
               onClick={Google}
-              className="bg-black text-red-500 rounded-md p-2 w-full   hover:text-black hover:bg-red-500 ease-in duration-300 "
+              className="bg-black text-secondary-0 rounded-md p-4 w-full flex gap-4  items-center font-Nunito font-medium -tracking-tighter md:text-xl hover:text-black hover:bg-secondary-0 ease-in duration-300 "
             >
-              Sign in With Google
+              <img
+                src={goolgIcon}
+                width="25rem"
+                height="25rem"
+                alt="Google icon"
+              />
+              <span className="ml-2">Sign in With Google</span>
             </button>
           </div>
-          <p className="mt-10 font-robotto  ">
+          <p className="mt-10 font-robotto  text-text">
             Don't have an account ?
             <Link
               className=" font-bold underline decoration-solid hover:text-black/30 ease-in duration-100 ml-2  "

@@ -7,13 +7,14 @@
 /* body {
   background-color: red;
 } */
-.services-container {
+
+.auth {
+  background: rgb(11, 7, 7);
   background: linear-gradient(
-      1deg,
-      rgba(250, 3, 3, 0.1) -297.99%,
-      rgba(6, 3, 3, 0.1) 95.5%
-    ),
-    #010101;
+    90deg,
+    rgba(11, 7, 7, 1) 53%,
+    rgba(0, 0, 0, 1) 100%
+  );
 }
 
 .hexagon {
