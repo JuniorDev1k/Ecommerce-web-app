@@ -28,7 +28,7 @@
   animation-duration: 2.6s;
   animation-timing-function: ease;
   animation-iteration-count: infinite;
-  color: red;
+  color: #df0d0d;
   transition: 0.4s ease;
   z-index: 100;
 }
@@ -63,13 +63,7 @@
 }
 .services-bro {
   height: 100vh;
-
-  background: linear-gradient(
-      1deg,
-      rgba(251, 3, 3, 0.1) -297.99%,
-      rgba(45, 16, 16, 0.1) 95.5%
-    ),
-    #1c0101;
+  background-image: linear-gradient(2deg, #fa0303 2%, black 100%);
 }
 .services-bro h1 {
   background: #240101;
@@ -78,7 +72,7 @@
   font-family: Ribeye Marrow;
 }
 .trustworthy {
-  box-shadow: #f91616;
+  box-shadow: #df0d0d;
 }
 input {
   border: 2px solid black;
@@ -88,7 +82,7 @@ input {
 }
 .servicesTtitle {
   background: #240101;
-  background: linear-gradient(to right, #240101 0%, #ff1a16 100%);
+  background: linear-gradient(to right, #240101 0%, #df0d0d 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -101,4 +95,12 @@ input {
 .slide-bottom {
   width: 150px;
   height: 100px;
+}
+
+#featured-products {
+  background: #df0d0d;
+  background: linear-gradient(to left, #df0d0d 0%, #df0d0d 51%, #dacece 099%);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
