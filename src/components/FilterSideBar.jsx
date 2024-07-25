@@ -15,7 +15,7 @@ const FilterSideBar = ({ selected, setcolor, price, setprix, Reset }) => {
   const FilterPrice = (price) => setprix(price);
 
   return (
-    <div className="text-text bg-red-800 md:col-span-2 col-span-2 sm:pt-10 flex flex-col justify-between  font-poppins rounded-tr-lg sticky top-0 h-screen   ">
+    <div className="text-text bg-secondary-0/10  md:col-span-2 col-span-2 sm:pt-10 flex flex-col justify-between  font-poppins rounded-tr-lg sticky top-0 h-screen   ">
       <div className="mt-4 flex flex-col gap-4    ">
         <h1 className="text-center text-3xl   text-black font-subheader -tracking-tighter">
           Category

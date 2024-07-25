@@ -22,12 +22,12 @@ const Nav = () => {
     <nav className=" bg-transparent p-5 flex justify-between absolute top-0 left-0 right-0 ">
       <Logo className="" />
       {/* our Navigation Links */}
-      <ul className="sm:flex justify-center hidden     gap-10   flex-1  text-2xl text-text text-l items-center  tracking-wider ">
+      <ul className="sm:flex justify-center hidden gap-10 flex-1 text-2xl text-text text-l items-center tracking-wider ">
         {Links.map((i) => {
           const { id, Lname, href } = i;
           return (
             <li
-              className=" hover:text-red-500 ease-out duration-300 p-1 font-navLinks   "
+              className=" hover:text-secondary-0 ease-out duration-300 p-1 font-navLinks   "
               key={id}
             >
               <Link to={href}>{Lname}</Link>
@@ -41,7 +41,7 @@ const Nav = () => {
             const { id, Lname, href } = i;
             return (
               <div className=" text-center h-10  bg-black  hover:border-l-2  border-secondary ease-in-out duration-300 w-full ">
-                <li className=" text-white  hover:text-secondary" key={id}>
+                <li className=" text-text  hover:text-secondary-0" key={id}>
                   <Link to={href}>{Lname}</Link>
                 </li>
               </div>
@@ -80,7 +80,7 @@ const Nav = () => {
             <div>
               <Link to="/Login">Login</Link>
             </div>
-            <div className="h-3/4 bg-secondary w-1  "></div>
+            <div className="h-3/4 bg-secondary-0 w-1  "></div>
             <div>
               <Link to="/signup">Signup</Link>
             </div>

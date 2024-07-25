@@ -6,7 +6,7 @@ const Button = ({ text, link }) => {
   return (
     <button
       onClick={() => navigate(link)}
-      className=" rounded-lg hover:bg-black transition hover:text-red-600  bg-red-600 md:py-4 md:px-24 font-poppins font-medium -tracking-tighter text-lg p-2  "
+      className=" rounded-lg hover:bg-black transition hover:text-secondary-0  bg-secondary-0 md:py-4 md:px-24 font-poppins font-medium -tracking-tighter text-lg p-2  "
     >
       {text}
     </button>

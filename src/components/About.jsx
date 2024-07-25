@@ -12,7 +12,7 @@ const About = () => {
 
   return (
     <>
-      <div className=" h-screen flex pl-20 bg-background relative  ">
+      <div className=" h-screen flex pl-20 bg-[#070101] relative  ">
         <AboutLeft object={currentYEAR} />
         {/* listing the year at the rights  */}
         <div className=" flex  flex-col text-text absolute top-0 right-0 justify-between h-screen py-4">

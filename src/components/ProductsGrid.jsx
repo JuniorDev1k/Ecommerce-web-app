@@ -30,7 +30,7 @@ const ProductsGrid = ({ data, loading }) => {
                     />
                   </Link>
                 </div>
-                <div className="card-body shadow-xl bg-red-800 rounded-b-lg  font-Nunito ">
+                <div className="card-body shadow-xl bg-secondary-0/10  rounded-b-lg  font-Nunito ">
                   <h2 className="card-title flex justify-between text-lg font-robotto ">
                     {name.slice(0, 16)}
                   </h2>

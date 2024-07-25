@@ -24,7 +24,7 @@ const Services = () => {
           </div>
           <div className="a2 flex justify-center gap-16 md:items-center max-md:gap-6 max-sm:flex-col">
             <Hexagone hex="CUSTOM STOR FUNCTIONALITIES" />
-            <div className="border-b-4 border-red-800 rounded pb-1 max-lg:hidden  ">
+            <div className="border-b-4 border-secondary-0 rounded pb-1 max-lg:hidden  ">
               <Logo />
             </div>
             <Hexagone hex="SHIPPING" />

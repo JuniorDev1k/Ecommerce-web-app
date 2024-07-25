@@ -13,18 +13,15 @@ export default {
       poppins: ["Poppins", "sans-serif"],
       Nunito: ["Nunito", "sans-serif"],
       robotto: ["Roboto", "sans-serif"],
-      logo: ['"Ribeye"'],
+      logo: ["Ribeye", "sans-serif"],
       navLinks: ['"Lato"'],
     },
 
     extend: {
       colors: {
+        secondary: ["#DF0D0D"],
+        yelloww: "FAFF0C",
         text: "#FFFFFF",
-        background: "black",
-        primary: "#cca3a8",
-        secondary: "#f91616",
-        accent: "#94b173",
-        background2: "#220202",
       },
     },
   },
