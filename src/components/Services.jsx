@@ -17,26 +17,26 @@ const Services = () => {
         <div className="felx w-1/2  " data-aos="zoom-in">
           <div className=" a2  flex justify-center gap-6  max-sm:flex-col ">
             <Hexagone hex="HIGHT QUALITY PRODUCTS" />
-            <Hexagone hex="HAVE FUN" />
+            <Hexagone hex="DELIVERY" />
           </div>
           <div className="a2 flex justify-center gap-16 md:items-center max-md:gap-6 max-sm:flex-col">
             <Hexagone hex="CUSTOM STOR FUNCTIONALITIES" />
             <div className="border-b-4 border-red-800 rounded pb-1 max-lg:hidden  ">
               <Logo />
             </div>
-            <Hexagone hex="HAVE FUN" />
+            <Hexagone hex="SHIPPING" />
           </div>
           <div className="a2 flex justify-center gap-6 max-md:gap-6 max-sm:flex-col">
-            <Hexagone hex="HAVE FUN" />
-            <Hexagone hex="HAVE FUN" />
+            <Hexagone hex="RETURNS" />
+            <Hexagone hex="VISUAL INDENTITY" />
           </div>
         </div>
         {/* left part  ---------------------------------------------------*/}
-        <div className="w-1/2 flex flex-col items-center justify-center pb-20   ">
-          <h1 className="servicesTtitle  text-4xl mt-2 font-robotto mb-4  ">
+        <div className="w-1/2 flex flex-col items-center justify-center pb-20 font-header  ">
+          <h1 className="servicesTtitle  text-4xl mt-2 mb-4 font-bold -tracking-tighter ">
             OUR SERVICES
           </h1>
-          <h3 className="text-white font-robotto  text-2xl">
+          <h3 className="text-white   text-2xl font-semibold -tracking-tight ">
             An Overview of what we offer to our clients!
           </h3>
         </div>

@@ -7,10 +7,14 @@ export default {
     // }
 
     fontFamily: {
+      header: ['"Montserrat"'],
+      subheader: ['"Open Sans"'],
+      paragraph: ['"Noto Sans Georgian"'],
       poppins: "Poppins",
       Nunito: "Nunito",
       robotto: "Roboto",
       logo: "Ribeye ",
+      navLinks: ['"Lato"'],
     },
 
     // Typography`

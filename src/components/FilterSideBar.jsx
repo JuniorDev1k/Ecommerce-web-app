@@ -17,7 +17,7 @@ const FilterSideBar = ({ selected, setcolor, price, setprix, Reset }) => {
   return (
     <div className="text-text bg-red-800 md:col-span-2 col-span-2 sm:pt-10 flex flex-col justify-between  font-poppins rounded-tr-lg sticky top-0 h-screen   ">
       <div className="mt-4 flex flex-col gap-4    ">
-        <h1 className="text-center text-2xl   text-black font-robotto">
+        <h1 className="text-center text-3xl   text-black font-subheader -tracking-tighter">
           Category
         </h1>
 
@@ -36,7 +36,9 @@ const FilterSideBar = ({ selected, setcolor, price, setprix, Reset }) => {
         })}
       </div>
       <div className="mt-4 p-2 ">
-        <h1 className="text-center mb-2">Price</h1>
+        <h1 className="text-center mb-2 font-subheader text-black  text-3xl -tracking-tighter ">
+          Price
+        </h1>
         <input
           type="range"
           min={1}
@@ -47,7 +49,7 @@ const FilterSideBar = ({ selected, setcolor, price, setprix, Reset }) => {
         />
       </div>
       <div className="mt-4 flex flex-col gap-4 p-2  ">
-        <h1 className="text-2xl font-robotto text-center  text-black ">
+        <h1 className="text-3xl  text-center  text-black font-subheader -tracking-tighter  ">
           Colors
         </h1>
         <div className="flex justify-center gap-1  ">

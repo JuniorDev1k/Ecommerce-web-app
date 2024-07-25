@@ -20,14 +20,14 @@ const Nav = () => {
   };
   return (
     <nav className=" bg-transparent p-5 flex justify-between absolute top-0 left-0 right-0 ">
-      <Logo className=" text font-robotto " />
+      <Logo className="" />
       {/* our Navigation Links */}
-      <ul className="sm:flex justify-center hidden    gap-10   flex-1  text-xl text-text  font-robotto text-l items-center  tracking-wider ">
+      <ul className="sm:flex justify-center hidden     gap-10   flex-1  text-2xl text-text text-l items-center  tracking-wider ">
         {Links.map((i) => {
           const { id, Lname, href } = i;
           return (
             <li
-              className=" hover:text-red-500 ease-out duration-300 p-1  "
+              className=" hover:text-red-500 ease-out duration-300 p-1 font-navLinks   "
               key={id}
             >
               <Link to={href}>{Lname}</Link>
@@ -52,7 +52,7 @@ const Nav = () => {
 
       {/* Conditionall rendering user profile name and picture ? Logged : Login / Singup */}
 
-      <div className="nav-log flex text-text gap-8 justify-between">
+      <div className="nav-log flex text-text gap-8 justify-between font-subheader  -tracking-tighter text-lg ">
         {currentuser ? (
           <>
             <div className="flex flex-col  ">

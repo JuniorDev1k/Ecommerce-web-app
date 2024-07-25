@@ -107,7 +107,7 @@ const SignlProduct = () => {
             </div>
             <div className="product-info-left">
               <div className="flex  flex-col gap-10">
-                <h1 className="md:text-3xl text-2xl  font-Nunito ">
+                <h1 className="md:text-3xl text-2xl  font-subheader -tracking-tighter    ">
                   {signlproduct?.name}
                 </h1>
                 <div className="prodcut-info text-neutral-content  flex flex-col gap-4">

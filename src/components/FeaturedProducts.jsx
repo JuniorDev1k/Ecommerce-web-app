@@ -22,7 +22,7 @@ const FeaturedProducts = () => {
   ];
   return (
     <>
-      <h1 className=" ml-4 mb-10 m-20   text-3xl  text-secondary  font-robotto	  ">
+      <h1 className=" ml-4 mb-10 m-20   text-3xl  text-secondary  font-subheader font-semibold -tracking-tighter ">
         {" "}
         Featured Products
       </h1>
