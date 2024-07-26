@@ -16,7 +16,7 @@ const CategorySlider = () => {
   return (
     <>
       <div id="slider" className="">
-        {/* <Swiper
+        <Swiper
           // install Swiper modules
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={10}
@@ -82,7 +82,7 @@ const CategorySlider = () => {
               />
             </div>
           </SwiperSlide>
-        </Swiper> */}
+        </Swiper>
         <div id="slider-wrapper  " className="grid grid-cols-5">
           <img id="slide" src={imag5} className="w-[18rem] h-[18rem]" alt="" />
           <img id="slide" src={imag1} className="w-[18rem] h-[18rem]" alt="" />
