@@ -11,11 +11,11 @@ import {
 const Home = () => {
   return (
     <>
-      {/* <Header />
+      <Header />
       <Services />
-      <About /> */}
-      <Brandslid />
-      <CategorySlider />
+      <About />
+      {/* <Brandslid />
+      <CategorySlider /> */}
     </>
   );
 };
