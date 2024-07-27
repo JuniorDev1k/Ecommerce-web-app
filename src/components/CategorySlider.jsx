@@ -1,4 +1,5 @@
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { Link } from "react-router-dom";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { categoryS } from "../data";
@@ -25,20 +26,29 @@ const SliderRemote = () => {
           slidesPerView={1}
           navigation
           pagination={{ clickable: true }}
-          scrollbar={{ draggable: true }}
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log("slide change")}
         >
           {categoryS.map((R) => {
             return (
               <>
-                <SwiperSlide>
-                  <div className="h-[90vh] w-[70vw] flex flex-col justify-center items-center">
+                <SwiperSlide className="flex flex-col justify-center items-center">
+                  <div className="h-[90vh] w-[55vw] flex flex-col justify-center items-center relative ">
                     <img className="w-full h-3/4 " src={R.img} alt="" />
-                    <div className="">
-                      <h1>{R.name}</h1>
-                      <h2>{R.category}</h2>
-                      <p>{R.descb}</p>
+                    <div className=" w-full   absolute left-0 bottom-[11.3vh] flex flex-col justify-between bg-gray-400/20">
+                      <h1 className="font-poppins font-medium text-text  text-md sm:text-lg -tracking-tighter p-2  ">
+                        {R.name}
+                      </h1>
+                      <div className="p-2 font-robotto text-text ">
+                        <h2 className="mb-2 font-bold ">{R.category}</h2>
+                        <p className="font-medium">{R.descb}</p>
+                      </div>
+                      <Link
+                        className="p-2  sm:px-12 bg-black text-secondary-0 font-Nunito font-medium -tracking-tighter text-xl w-[12vw] mb-2 rounded-r-xl    "
+                        to="/Products"
+                      >
+                        BROWS
+                      </Link>
                     </div>
                   </div>
                 </SwiperSlide>
