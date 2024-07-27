@@ -11,9 +11,9 @@ import {
 const Home = () => {
   return (
     <>
-      {/* <Header /> */}
-      {/* <Services />
-      <About /> */}
+      <Header />
+      <Services />
+      <About />
       <Brandslid />
       <CategorySlider />
     </>
