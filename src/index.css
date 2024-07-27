@@ -149,7 +149,7 @@ input {
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
-  height: 1.7rem;
+
   width: 20vw;
   opacity: 0;
   transform: translateY(30px);
@@ -176,4 +176,11 @@ input {
   opacity: 1 !important ;
   transform: translateY(0) !important 
   ;
+}
+
+.socialLinks {
+  transition-duration: 0.3s;
+}
+.socialLinks > :hover {
+  color: grey;
 }
