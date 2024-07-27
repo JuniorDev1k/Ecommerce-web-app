@@ -1,13 +1,10 @@
 // Folder structure for the images
 
-import imag1 from "../Assets/Images/andrey-matveev-WUqkLR1fyaw-unsplash.jpg";
-import imag2 from "../Assets/Images/christian-wiediger-c3ZWXOv1Ndc-unsplash.jpg";
-import imag3 from "../Assets/Images/unsplash_SsI775V5cDU.png";
-import imag4 from "../Assets/Images/joshua-ng-1sSfrozgiFk-unsplash.jpg";
-import imag5 from "../Assets/Images/joseph-greve-D_1-g2eLho8-unsplash.jpg";
-// import imag6 from "../Assets/Images/christian-wiediger-c3ZWXOv1Ndc-unsplash.jpg";
-// import imag7 from "../Assets/Imagespexels-dilyar-sultan-596750.jpg";
-// import imag8 from "../Assets/Images/pexels-athena-2582928.jpg";
+import imag1 from "../Assets/Images/slider-01.jpg";
+import imag2 from "../Assets/Images/slider-0111.jpg";
+import imag3 from "../Assets/Images/sliders.jpg";
+import imag4 from "../Assets/Images/accessory-slider-one.jpg";
+import imag5 from "../Assets/Images/joshua-ng-1sSfrozgiFk-unsplash.jpg";
 
 export const Links = [
   { Lname: "Home", id: 1, href: "/" },
@@ -67,30 +64,30 @@ export const Dabout = [
 export const categoryS = [
   {
     id: 1,
-    namae: "GPU",
-    category: "Pieces",
-    descb: "hight quality gaming graphic cards..",
+    namae: "MOUSE RAZOR S-",
+    category: "Accessory",
+    descb: "MOUSE RAZOR S-",
     img: imag1,
   },
   {
     id: 2,
-    name: "RAM",
+    name: "GPU",
     category: "Pieces",
-    descb: "powerfull Ram with latest generation",
+    descb: "RTX-3080",
     img: imag2,
   },
   {
     id: 3,
-    name: "GPU",
-    category: "Pieces",
-    descb: "i9 and i7 latest generation CPU..",
+    name: "GAMING CONFIG SETEP",
+    category: "full config",
+    descb: "i9 and i7 latest generation CPU ,DDR5",
     img: imag3,
   },
   {
     id: 4,
-    name: "INTEL 7 11TH with .....",
-    category: "Full config",
-    descb: "Gaming PCs full config",
+    name: "PACK MOUSE KEYBOARD",
+    category: "ACCESSORY",
+    descb: "Gaming PCs ",
     img: imag4,
   },
   {
@@ -102,17 +99,17 @@ export const categoryS = [
   },
   {
     id: 6,
-    name: "keyboard SOG45",
-    category: "Accessory",
-    descb: "Gaming Keyboards",
-    // img: imag6,
+    name: "RTX 1660",
+    category: "Pieces",
+    descb: "GPU ULTRA GAMING ",
+    img: imag2,
   },
   {
     id: 7,
-    name: "Remote Controller",
+    name: "MOUSE",
     category: "Accessory",
-    descb: "Controller m4v2 rk24_b1",
-    // img: imag7,
+    descb: "Gaming mouse ",
+    img: imag1,
   },
 ];
 export const colorOptions = [

@@ -10,14 +10,6 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
 const SliderRemote = () => {
-  const SlideriImages = [
-    { id: 1, name: "", imgUrl: "", descb: "" },
-    { id: 2, name: "", imgUrl: "", descb: "" },
-    { id: 3, name: "", imgUrl: "", descb: "" },
-    { id: 4, name: "", imgUrl: "", descb: "" },
-    { id: 5, name: "", imgUrl: "", descb: "" },
-  ];
-
   return (
     <>
       <div className="flex justify-center items-center w-screen p-10">
