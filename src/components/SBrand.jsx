@@ -1,10 +1,10 @@
 import React from "react";
 
 const SBrand = ({ brand }) => {
-  // const { img } = brand.props
+  const { img, name } = brand;
   return (
-    <div>
-      <img src={brand} alt="brand name" />
+    <div className="brandSlide  border-white border-2 border-solid ">
+      <img className="h-full w-[15vw] " src={img} alt={name} />
     </div>
   );
 };
