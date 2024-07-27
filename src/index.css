@@ -132,7 +132,7 @@ input {
 .card-category > .row {
   width: 100%;
   color: white;
-  display: flex;
+  margin-left: 0.5vw;
   flex-wrap: nowrap;
 }
 .card-category > .row > .icon {
@@ -183,4 +183,9 @@ input {
 }
 .socialLinks > :hover {
   color: grey;
+}
+
+.radio-input:checked + .row {
+  display: flex;
+  flex-direction: column;
 }

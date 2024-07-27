@@ -19,9 +19,9 @@ const App = () => {
     // we setup the routing
     <>
       <AuthProvider>
-        {/* <Nav /> */}
+        <Nav />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home className="bg-[#070101] " />} />
 
           <Route path="/Products" element={<Products />} />
 

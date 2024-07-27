@@ -16,7 +16,7 @@ const brands = [
 const Brandslide = () => {
   return (
     <>
-      <div className="h-[20vh]  flex justify-between  ">
+      <div className="h-[20vh]  flex justify-between bg-[#070101]   ">
         {brands.map((b) => {
           return <SBrand brand={b} key={b.id} />;
         })}

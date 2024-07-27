@@ -12,7 +12,7 @@ const Services = () => {
     <>
       <section
         id="Services"
-        className=" services-container min-h-screen flex p-16 gap-10 max-sm:flex-col max-sm:items-center "
+        className="services-container min-h-screen flex p-16 gap-10 max-sm:flex-col max-sm:items-center bg-[#070101] "
       >
         <div
           className="felx w-1/2  font-poppins font-semibold "

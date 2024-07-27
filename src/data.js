@@ -6,6 +6,13 @@ import imag3 from "../Assets/Images/sliders.jpg";
 import imag4 from "../Assets/Images/accessory-slider-one.jpg";
 import imag5 from "../Assets/Images/joshua-ng-1sSfrozgiFk-unsplash.jpg";
 
+import abt1 from "../Assets/Images/about-01.jpg";
+import abt2 from "../Assets/Images/about-02.jpg";
+import abt3 from "../Assets/Images/abbout-03.jpg";
+import abt4 from "../Assets/Images/about-04.jpg";
+import abt5 from "../Assets/Images/about-05.jpg";
+import abt6 from "../Assets/Images/about-06.jpg";
+
 export const Links = [
   { Lname: "Home", id: 1, href: "/" },
   { Lname: "Services", id: 2, href: "#Services" },
@@ -19,44 +26,44 @@ export const Dabout = [
   {
     id: 0,
     year: "2017 / 2018",
-    img: imag1,
+    img: abt1,
     story:
       "we started our company as game development services providing gamers best products and materials for their needs and make great  opportunities for them",
   },
   {
     id: 1,
     year: "2018 / 2019",
-    img: imag2,
+    img: abt2,
     story:
-      "we started our company as game development services providing gamers best products and materials for their needs and make great  opportunities for them",
+      "Our dream got bigger so we went for bigger step and started thinking outside the box by reaching wide rang of leads",
   },
   {
     id: 2,
     year: "2019 / 2020",
-    img: imag2,
+    img: abt5,
     story:
-      "we started our company as game development services providing gamers best products and materials for their needs and make great  opportunities for them",
+      "We beleived in our selves and got our idea to be real we ran soo fast to get a spot in the field ",
   },
   {
     id: 3,
     year: "2020 / 2021",
-    img: imag3,
+    img: abt4,
     story:
-      "we started our company as game development services providing gamers best products and materials for their needs and make great  opportunities for them",
+      "By the Time it gets harder and we almost failed , but the hard work never stopped we were putting all what we got",
   },
   {
     id: 4,
     year: "2021 / 2022",
-    img: imag4,
+    img: abt3,
     story:
-      "we started our company as game development services providing gamers best products and materials for their needs and make great  opportunities for them",
+      "Our Company Started to Grow , by Time we got millions of users form everywhere  and every one is satisfied",
   },
   {
     id: 5,
     year: "2022 / 2023",
-    img: imag5,
+    img: abt6,
     story:
-      "we started our company as game development services providing gamers best products and materials for their needs and make great  opportunities for them",
+      "Our company worth billions we are just killing everybody around , no competetor can compete with us  ",
   },
 ];
 

@@ -12,7 +12,7 @@ import "swiper/css/scrollbar";
 const SliderRemote = () => {
   return (
     <>
-      <div className="flex justify-center items-center w-screen p-10">
+      <div className="flex justify-center items-center w-screen p-10 bg-[#070101]  ">
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           slidesPerView={1}
@@ -89,7 +89,7 @@ const items = [
 const CategorySlider = () => {
   return (
     <>
-      <div className=" flex justify-center items-center gap-2 my-20 ">
+      <div className=" flex justify-center items-center gap-2 py-20 bg-[#070101]  ">
         {items.map((I) => {
           const { id, name, imgUrl, discp } = I;
           return (
@@ -108,7 +108,7 @@ const CategorySlider = () => {
                 htmlFor={id}
                 className="card-category w-[4vw]  bg-slate-900 cursor-pointer overflow-hidden flex items-end    "
               >
-                <div className="row md:py-6 ">
+                <div className="row md:py-6 gap-4  ">
                   <div className="icon sm:p-2 ">{id}</div>
                   <div className="description">
                     <h4>{name}</h4>
