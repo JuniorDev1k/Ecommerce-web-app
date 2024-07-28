@@ -12,7 +12,7 @@ const FilterSideBar = ({ selected, setcolor, price, setprix, Reset }) => {
 
   const FilterColor = (c) => setcolor(c);
 
-  const FilterPrice = (price) => setprix(price);
+  // const FilterPrice = (price) => setprix(price);
 
   return (
     <div className="text-text bg-secondary-0/10  md:col-span-2 col-span-2 sm:pt-10 flex flex-col justify-between  font-Nunito rounded-tr-2xl sticky top-0 h-screen py-2  p-0     sm:py-0   ">
@@ -41,8 +41,8 @@ const FilterSideBar = ({ selected, setcolor, price, setprix, Reset }) => {
         </h1>
         <input
           type="range"
-          min={1}
-          max="3000"
+          min="1"
+          max="11000"
           value={price}
           onChange={(e) => setprix(e.target.value)}
           className="range border-0 h-[0.7rem] "

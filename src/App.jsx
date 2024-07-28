@@ -19,11 +19,11 @@ const App = () => {
     // we setup the routing
     <>
       <AuthProvider>
-        <Nav />
+        {/* <Nav /> */}
         <Routes>
           <Route path="/" element={<Home className="bg-[#070101] " />} />
 
-          <Route path="/Products" element={<Products />} />
+          <Route path="/Products"   element= <ForProducts/> {<Products />} />
 
           <Route path="Products/:productId" element={<SignlProduct />} />
 
@@ -32,7 +32,7 @@ const App = () => {
           <Route path="/Login" element={<Login />} />
           <Route path="*" element={<Error />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </AuthProvider>
     </>
   );
