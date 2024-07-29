@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import { useParams } from "react-router-dom";
 import { getDoc, doc } from "firebase/firestore";
 import { db } from "../config/firebase";
@@ -40,6 +42,9 @@ const SignlProduct = () => {
 
     fetchProduct();
   }, [productId]);
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
 
   // order alert ( boolean value ) .
   const orderItem = () => {
@@ -98,7 +103,11 @@ const SignlProduct = () => {
         </div>
         <main className="product-Dtaails grid grid-cols-1 sm:gap-2 items-center  font-robotto ">
           <section className="prodcut-dettials-heade grid grid-cols-1 md:grid-cols-2 md:gap-2  font-Nunito     ">
-            <div className="product-picture h-2/3 sm:h-3/4 ">
+            <div
+              className="product-picture h-2/3 sm:h-3/4 "
+              data-aos="fade-left"
+              data-aos-duration="1800"
+            >
               <img
                 className="rounded-xl hover:translate-y-2 transition ease-linear  w-2/3 sm:w-3/4 h-full object-fill   "
                 src={signlproduct?.ImgUrl}
