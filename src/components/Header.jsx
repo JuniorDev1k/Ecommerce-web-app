@@ -6,9 +6,10 @@ const Header = () => {
     <header
       className="min-h-screen bg-no-repeat bg-cover flex flex-col justify-end gap-20 p-10 text-text font-header "
       style={{ backgroundImage: 'URL("Assets/Header.jpg")' }}
+      data-aos="rotate"
     >
       <div className="flex flex-col  tracking-widest w-screen   ">
-        <div className="hero-right  lg:w-1/3 w-1/2  font-medium   ">
+        <div className="hero-right  lg:w-1/3 w-1/2  font-medium  ">
           <h1 className="text-3xl max-sm:text-lg leading-10	max-sm:mt-10    ">
             BROWS TRENDS GAMING PRODUCTS
           </h1>

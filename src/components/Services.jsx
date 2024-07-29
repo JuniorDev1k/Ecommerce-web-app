@@ -16,7 +16,8 @@ const Services = () => {
       >
         <div
           className="felx w-1/2  font-poppins font-semibold "
-          data-aos="zoom-in"
+          data-aos="slide-up"
+          data-aos-duration="1800"
         >
           <div className=" a2  flex justify-center gap-6  max-sm:flex-col ">
             <Hexagone hex="HIGHT QUALITY PRODUCTS" />
@@ -35,7 +36,10 @@ const Services = () => {
           </div>
         </div>
         {/* left part  ---------------------------------------------------*/}
-        <div className="w-1/2 flex flex-col items-center justify-center pb-20 font-header  ">
+        <div
+          className="w-1/2 flex flex-col items-center justify-center pb-20 font-header   "
+          data-aos="zoom-in"
+        >
           <h1 className="servicesTtitle  text-4xl mt-2 mb-4 font-bold -tracking-tighter ">
             OUR SERVICES
           </h1>

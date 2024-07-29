@@ -1,5 +1,8 @@
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import react, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { categoryS } from "../data";
@@ -8,11 +11,16 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import React from "react";
 
 const SliderRemote = () => {
   return (
     <>
-      <div className="flex justify-center items-center w-screen p-10 bg-[#070101]  ">
+      <div
+        className="flex justify-center items-center w-screen p-10 bg-[#070101]  "
+        data-aos="fade-up"
+        data-aos-duration="800"
+      >
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           slidesPerView={1}
@@ -87,9 +95,16 @@ const items = [
 ];
 
 const CategorySlider = () => {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
   return (
     <>
-      <div className=" flex justify-center items-center gap-2 py-20 bg-[#070101]  ">
+      <div
+        className=" flex justify-center items-center gap-2 py-20 bg-[#070101]    "
+        data-aos="fade-in"
+        data-aos-duration="3000"
+      >
         {items.map((I) => {
           const { id, name, imgUrl, discp } = I;
           return (

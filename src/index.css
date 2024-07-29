@@ -13,6 +13,10 @@
   );
 }
 
+/* [data-aos="fade-in"] {
+  opacity: 0; /* This ensures the element starts invisible */
+/* } */
+
 .hexagon {
   height: 11rem;
   width: 11rem;
