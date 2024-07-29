@@ -1,4 +1,9 @@
 // Folder structure for the images
+import featured01 from "../Assets/Images/featured-01.jpg";
+import featured02 from "../Assets/Images/featured-02.jpg";
+import featured03 from "../Assets/Images/featured-03.jpg";
+import featured04 from "../Assets/Images/featured-04.jpg";
+import featured05 from "../Assets/Images/featured-05.jpg";
 
 import imag1 from "../Assets/Images/slider-01.jpg";
 import imag2 from "../Assets/Images/slider-0111.jpg";
@@ -125,4 +130,13 @@ export const colorOptions = [
   { name: "Blue", value: "blue" },
   { name: "Yellow", value: "yellow" },
   { name: "Purple", value: "purple" },
+];
+
+// featured Products :
+export const FeatureProductCards = [
+  { id: 1, imgurl: featured01, title: " GPU-RTX-3080 TI" },
+  { id: 2, imgurl: featured02, title: " XBOX-1" },
+  { id: 3, imgurl: featured03, title: " FULL CONFIG" },
+  { id: 4, imgurl: featured04, title: " FULL ACCESSORY" },
+  { id: 5, imgurl: featured05, title: " GLACES CASE" },
 ];
