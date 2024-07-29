@@ -7,10 +7,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import imag1 from "../../Assets/Images/andrey-matveev-WUqkLR1fyaw-unsplash.jpg";
-import imag2 from "../../Assets/Images/christian-wiediger-c3ZWXOv1Ndc-unsplash.jpg";
-import imag3 from "../../Assets/Images/unsplash_SsI775V5cDU.png";
-import imag4 from "../../Assets/Images/joshua-ng-1sSfrozgiFk-unsplash.jpg";
 
 import { FeatureProductCards } from "../data";
 

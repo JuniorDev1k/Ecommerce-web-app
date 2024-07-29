@@ -3,7 +3,7 @@ import { db, Storage } from "../../src/config/firebase";
 import { doc, addDoc, collection } from "firebase/firestore";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { useNavigate } from "react-router-dom";
-import Noimg from "../../Assets/Images/image-tools.svg";
+import Noimg from "../Assets/Images/image-tools.svg";
 import { colorOptions } from "../data";
 
 const AddProduct = () => {

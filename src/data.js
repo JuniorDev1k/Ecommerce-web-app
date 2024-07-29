@@ -1,22 +1,22 @@
 // Folder structure for the images
-import featured01 from "../Assets/Images/featured-01.jpg";
-import featured02 from "../Assets/Images/featured-02.jpg";
-import featured03 from "../Assets/Images/featured-03.jpg";
-import featured04 from "../Assets/Images/featured-04.jpg";
-import featured05 from "../Assets/Images/featured-05.jpg";
+import featured01 from "./Assets/Images/featured-01.jpg";
+import featured02 from "./Assets/Images/featured-02.jpg";
+import featured03 from "./Assets/Images/featured-03.jpg";
+import featured04 from "./Assets/Images/featured-04.jpg";
+import featured05 from "./Assets/Images/featured-05.jpg";
 
-import imag1 from "../Assets/Images/slider-01.jpg";
-import imag2 from "../Assets/Images/slider-0111.jpg";
-import imag3 from "../Assets/Images/sliders.jpg";
-import imag4 from "../Assets/Images/accessory-slider-one.jpg";
-import imag5 from "../Assets/Images/joshua-ng-1sSfrozgiFk-unsplash.jpg";
+import imag1 from "./Assets/Images/slider-01.jpg";
+import imag2 from "./Assets/Images/slider-0111.jpg";
+import imag3 from "./Assets/Images/sliders.jpg";
+import imag4 from "./Assets/Images/accessory-slider-one.jpg";
+import imag5 from "./Assets/Images/joshua-ng-1sSfrozgiFk-unsplash.jpg";
 
-import abt1 from "../Assets/Images/about-01.jpg";
-import abt2 from "../Assets/Images/about-02.jpg";
-import abt3 from "../Assets/Images/abbout-03.jpg";
-import abt4 from "../Assets/Images/about-04.jpg";
-import abt5 from "../Assets/Images/about-05.jpg";
-import abt6 from "../Assets/Images/about-06.jpg";
+import abt1 from "./Assets/Images/about-01.jpg";
+import abt2 from "./Assets/Images/about-02.jpg";
+import abt3 from "./Assets/Images/abbout-03.jpg";
+import abt4 from "./Assets/Images/about-04.jpg";
+import abt5 from "./Assets/Images/about-05.jpg";
+import abt6 from "./Assets/Images/about-06.jpg";
 
 export const Links = [
   { Lname: "Home", id: 1, href: "/" },

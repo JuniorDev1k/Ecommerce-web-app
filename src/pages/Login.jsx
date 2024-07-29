@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../Context/userData";
 import { Link } from "react-router-dom";
-import goolgIcon from "../../Assets/Icons/google-color-icon.svg";
+import goolgIcon from "../Assets/Icons/google-color-icon.svg";
 
 const Login = () => {
   // user inputs values

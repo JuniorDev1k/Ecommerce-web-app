@@ -20,7 +20,7 @@ const About = () => {
             const { year, id } = y;
             return (
               <button
-                className="hover:text-secondary  rounded-l-md hover:bg-white p-4 transition "
+                className="hover:text-secondary  rounded-l-md hover:bg-white  hover:text-black p-4 transition "
                 key={id}
                 onClick={() => selectYear(id)}
               >

@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { getDoc, doc } from "firebase/firestore";
 import { db } from "../config/firebase";
 import { Link } from "react-router-dom";
-import brandLogo from "../../Assets/Images/unsplash_oOP4Qo-jF3w.png";
+import brandLogo from "../Assets/Images/unsplash_oOP4Qo-jF3w.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faShieldHeart } from "@fortawesome/free-solid-svg-icons";

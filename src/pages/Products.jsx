@@ -15,7 +15,7 @@ import { FilterSideBar, ProductsGrid, FeaturedProducts } from "../components";
 
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import userAavatar from "../../Assets/Images/Avatar.webp";
+import userAavatar from "../Assets/Images/Avatar.webp";
 
 const Products = () => {
   const [allProducts, setAllProducts] = useState([]);
