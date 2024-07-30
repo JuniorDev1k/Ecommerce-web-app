@@ -53,15 +53,20 @@ const Nav = () => {
       {/* Conditionall rendering user profile name and picture ? Logged : Login / Singup */}
 
       <div className="nav-log flex text-text gap-8 justify-between font-subheader  -tracking-tighter text-lg ">
-        {currentuser ? (
+        {currentuser?.email || currentuser?.displayName ? (
           <>
             <div className="flex flex-col  ">
               <p className="text-sm">
                 {" "}
-                Wlecome : {currentuser.email.slice(0, 12)}...{" "}
+                Wlecome : {currentuser?.email.slice(0, 12)}...{" "}
               </p>
 
-              <p> {currentuser.displayName.slice(0, 10)}... </p>
+              <p>
+                {" "}
+                {currentuser?.displayName &&
+                  currentuser?.displayName.slice(0, 10)}
+                ...{" "}
+              </p>
             </div>
 
             <button

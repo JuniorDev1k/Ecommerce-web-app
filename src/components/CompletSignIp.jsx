@@ -23,9 +23,10 @@ const CompletSignIp = () => {
 
     setData({
       ...data,
-      [id]: value,
+
       email: currentuser.email,
       imgUrl: file,
+      displayName: value,
     });
   };
   const addUsertoDB = async (e) => {
@@ -41,7 +42,6 @@ const CompletSignIp = () => {
       console.error("Error adding document: ", e);
       Navigate("/Signup");
     } finally {
-      Navigate("/");
     }
   };
 
@@ -65,12 +65,11 @@ const CompletSignIp = () => {
           />
         </div>
         <div>
-          <h2>Upload image profile mother fucker</h2>
+          <h2>Upload image profile</h2>
         </div>
 
         <button type="submit" className="bg-red-500 p-4 rounded-xl">
-          {" "}
-          SignUp{" "}
+          SignUp
         </button>
       </form>
     </div>
