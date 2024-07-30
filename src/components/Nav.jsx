@@ -65,7 +65,7 @@ const Nav = () => {
             </div>
 
             <button
-              className="bg-red-400 rounded-xl p-2 text-black  "
+              className="bg-secondary-0 rounded-md p-2 text-black  "
               onClick={signout}
             >
               {" "}
