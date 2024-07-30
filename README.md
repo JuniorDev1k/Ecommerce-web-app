@@ -9,5 +9,38 @@ Currently, two official plugins are available:
 
 - 
 
-Project description. I developed a dynamic ecommerce web application specializing in gaming products using React for the frontend and Firebase for backend I implemented authentication (email and Google), Firestore for database design & logic, and Firebase Storage for image storage. Leveraging React hooks and Context API ensured efficient data fetching and state management. The application includes a comprehensive product page with advanced search and filtering system (by category, price, color), seamless user authentication flows, and product detail pages for enhanced user experience.
+Project description: 
+I developed a dynamic ecommerce web application specializing in gaming products using React for the frontend and Firebase for backend
 
+ - I implemented authentication (email and Google)
+ - Firestore for database design & logic
+ - Firebase Storage for image storage
+ - Leveraging React hooks and Context API ensured efficient data fetching and state management
+
+The application includes : 
+ - comprehensive product page with search and filtering system
+     - by category
+     - price
+     - color
+     - name ( search input )
+      
+ - seamless user authentication flow
+ - product detaills pages for enhanced user experience.
+ - admin page for creating a product
+
+
+tech used : 
+ - react.js & react Hooks +  context for state mangment
+ - tailind css
+ - Daisy Ui
+ - siper.js
+ - Aos
+ - react-router
+
+
+- firebase :
+  - firestore( DB )
+  - Auth
+  - Storage
+  - Hosting + githubPages ( Deploy )
+    
