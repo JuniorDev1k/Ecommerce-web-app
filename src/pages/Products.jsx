@@ -25,7 +25,7 @@ const Products = () => {
   const [loading, setLoading] = useState(false);
   const [selectedcategory, setSelectedcategory] = useState("");
   const [selectedcolor, setSelectedcolor] = useState("");
-  const [price, setPrice] = useState(50);
+  const [price, setPrice] = useState(null);
 
   const { currentuser } = useAuth(); // getting the userState to product page.
   currentuser && console.log(currentuser);

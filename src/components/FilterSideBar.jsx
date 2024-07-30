@@ -41,8 +41,8 @@ const FilterSideBar = ({ selected, setcolor, price, setprix, Reset }) => {
         </h1>
         <input
           type="range"
-          min="1"
-          max="11000"
+          min={1}
+          max={11000}
           value={price}
           onChange={(e) => setprix(e.target.value)}
           className="range border-0 h-[0.7rem] "
