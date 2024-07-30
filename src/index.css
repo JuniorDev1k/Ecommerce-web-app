@@ -162,18 +162,18 @@ input {
 }
 
 .radio-input:checked + #Pieces {
-  background-image: url("../Assets/Images/joseph-greve-D_1-g2eLho8-unsplash.jpg");
+  background-image: url("./Assets/Images/joseph-greve-D_1-g2eLho8-unsplash.jpg");
   background-size: cover;
   width: 60vw;
 }
 .radio-input:checked + #Accessory {
-  background-image: url("../Assets/Images/redd-f-3mWxKnqET3E-unsplash.jpg");
+  background-image: url("./Assets/Images/redd-f-3mWxKnqET3E-unsplash.jpg");
   background-size: cover;
   width: 60vw;
 }
 .radio-input:checked + #FullConfig {
   width: 60vw;
-  background-image: url("../Assets/Images/The Manly Club is under construction.jpg");
+  background-image: url("./Assets/Images/The Manly Club is under construction.jpg");
   background-size: cover;
 }
 .radio-input:checked + .card-category .description {

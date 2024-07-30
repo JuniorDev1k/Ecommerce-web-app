@@ -1,16 +1,20 @@
 // Folder structure for the images
+
+// iamges for featured products
 import featured01 from "./Assets/Images/featured-01.jpg";
 import featured02 from "./Assets/Images/featured-02.jpg";
 import featured03 from "./Assets/Images/featured-03.jpg";
 import featured04 from "./Assets/Images/featured-04.jpg";
 import featured05 from "./Assets/Images/featured-05.jpg";
 
+// images for sliders
 import imag1 from "./Assets/Images/slider-01.jpg";
 import imag2 from "./Assets/Images/slider-0111.jpg";
 import imag3 from "./Assets/Images/sliders.jpg";
 import imag4 from "./Assets/Images/accessory-slider-one.jpg";
 import imag5 from "./Assets/Images/joshua-ng-1sSfrozgiFk-unsplash.jpg";
 
+// images for about section
 import abt1 from "./Assets/Images/about-01.jpg";
 import abt2 from "./Assets/Images/about-02.jpg";
 import abt3 from "./Assets/Images/abbout-03.jpg";
@@ -76,7 +80,7 @@ export const Dabout = [
 export const categoryS = [
   {
     id: 1,
-    namae: "MOUSE RAZOR S-",
+    name: "MOUSE RAZOR S-",
     category: "Accessory",
     descb: "MOUSE RAZOR S-",
     img: imag1,
