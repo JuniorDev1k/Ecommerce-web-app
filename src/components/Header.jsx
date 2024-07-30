@@ -25,7 +25,7 @@ const Header = () => {
         <div className="   lg:w-1/3 w-1/2     ">
           <h1 className="text-3xl max-sm:text-lg  leading-10"> WHO WE ARE</h1>
           <h1 className="text-l max-sm:text-sm my-4  ">OUR JOURNEY </h1>
-          <Button text="DISCOVER US" link="/admin" />
+          <Button text="DISCOVER US" link="#about" />
         </div>
       </div>
     </header>
