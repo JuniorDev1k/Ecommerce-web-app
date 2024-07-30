@@ -37,12 +37,9 @@ const ProductsGrid = ({ data, loading }) => {
         </div>
       )}
       {loading && (
-        <div>
-          {" "}
-          <p className="text-blue-400 p-10  text-2xl ">
-            Loading....................................................
-          </p>{" "}
-        </div>
+        <span className="loading loading-dots w-[6rem] h-screen   ml-[50%]  ">
+          Loadding ....
+        </span>
       )}
       {data ? (
         data.map((p) => {
