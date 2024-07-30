@@ -106,16 +106,19 @@ const AddProduct = () => {
         </div>
       )}
       <div className="form-product flex flex-col items-center justify-center p-2 mt-20 ">
-        {err && <h1 className="text-red 500">{err}</h1>}
-        <h1 className="text-center text-2xl font-medium font-robotto -tracking-tighter   ">
+        <h1 className="text-center text-3xl font-bold  font-header text-secondary-0 -tracking-tighter m-10  ">
           Add Your Product
         </h1>
+
+        {err && (
+          <h1 className="text-secondary-0 text-lg text-center  ">{err}</h1>
+        )}
         <form
           onSubmit={AddProduct}
           className={`grid grid-cols-2 gap-4 p-4 w-full`}
         >
-          <div className=" flex  gap-20 flex-col left-form">
-            <div className="flex flex-col h-[17rem] align-center ">
+          <div className="left-form  flex  gap-20 flex-col  ">
+            <div className="flex flex-col h-[17rem]  ">
               <label htmlFor="">Image</label>
               <input
                 type="file"
@@ -126,24 +129,33 @@ const AddProduct = () => {
               <img
                 src={file ? URL.createObjectURL(file) : Noimg}
                 alt={file ? "not yet" : "letgsgosogso"}
-                className="w-full h-full border-2 border-solid border-black "
+                className={
+                  file
+                    ? ` w-full h-full border-2 border-solid border-black`
+                    : `w-3/4 h-3/4 border-2 border-solid border-black`
+                }
               />
             </div>
 
-            <div className="Pr-dettials grid grid-cols-2  ">
-              <div className="grid grid-cols-2 gap-4 items-center">
+            <div className="Pr-dettials grid md:grid-cols-2 grid-cols-1    ">
+              <div className="grid md:grid-cols-2 grid-cols-1 gap-x-2 gap-y-4 items-center ">
                 <div>
-                  <label htmlFor="reviews">reviews</label>
+                  <label className="mb-2" htmlFor="reviews">
+                    reviews
+                  </label>
                   <input
                     type="number"
                     placeholder="reviews"
                     onChange={handlchange}
                     name="reviews"
                     required
+                    className="p-2 rounded-lg "
                   />
                 </div>
-                <div>
-                  <label htmlFor="Available">Available</label>
+                <div className="flex   flex-col gap-2 ">
+                  <label className="text-center " htmlFor="Available">
+                    Available
+                  </label>
                   <input
                     type="checkbox"
                     onChange={handlchange}
@@ -158,12 +170,17 @@ const AddProduct = () => {
                     onChange={handlchange}
                     name="rating"
                     required
+                    className="p-2 rounded-lg "
                   />
                 </div>
-                <div>
+                <div className="flex flex-col items-center  ">
                   <label htmlFor="">color</label>
                   <div className="input-color">
-                    <select name="color" onChange={handlchange}>
+                    <select
+                      name="color"
+                      className="p-2 rounded-lg "
+                      onChange={handlchange}
+                    >
                       {colorOptions.map((C) => (
                         <option
                           style={{ backgroundColor: C.value }}
@@ -177,9 +194,13 @@ const AddProduct = () => {
                   </div>
                 </div>
               </div>
-              <div className="input-category flex flex-col gap-2">
+              <div className="input-category flex flex-col gap-2  ">
                 <label htmlFor="">Category</label>
-                <select name="category" onChange={handlchange}>
+                <select
+                  name="category"
+                  onChange={handlchange}
+                  className="p-4 rounded-lg"
+                >
                   {categorise.map((i) => (
                     <option key={i.value} value={i.value}>
                       {i.name}
@@ -189,19 +210,22 @@ const AddProduct = () => {
               </div>
             </div>
           </div>
-          <div className="right-form">
-            <div>
-              <div>
+
+          {/* right side form */}
+          <div className="right-form  flex flex-col justify-between mt-6 font-Nunito   ">
+            <div className="flex flex-col gap-6">
+              <div className="flex flex-col">
                 <label htmlFor="title">Product Title</label>
                 <input
                   type="text"
                   placeholder="Product Title"
                   onChange={handlchange}
                   name="name"
+                  className="p-4 rounded-md "
                   required
                 />
               </div>
-              <div>
+              <div className="flex flex-col ">
                 {" "}
                 <label htmlFor="price">Price</label>
                 <input
@@ -210,9 +234,10 @@ const AddProduct = () => {
                   onChange={handlchange}
                   name="price"
                   required
+                  className="p-4"
                 />
               </div>
-              <div>
+              <div className="flex flex-col ">
                 {" "}
                 <label htmlFor="description">description</label>
                 <input
@@ -221,24 +246,23 @@ const AddProduct = () => {
                   onChange={handlchange}
                   name="subdescrb"
                   required
+                  className="p-4 border-none focus:border-none "
                 />
               </div>
             </div>
-            <div>
+            <div className="pb-6">
               <label htmlFor="Descriptionbig">Sub Description</label>
               <textarea
                 name="description"
-                className="border-2 border-t-gray-900"
+                className="border-2 border-t-gray-900 w-full h-full  p-2"
                 id=""
-                cols="2"
-                rows="2"
                 onChange={handlchange}
                 required
               ></textarea>
             </div>
           </div>
           <button
-            className="  mt-20 rounded-xl p-2 bg-black w-1/2 text-white"
+            className="mt-20 rounded-xl py-2 bg-black w-1/2 text-white font-robotto -tracking-tighter font-medium  md:ml-[13vw] hover:text-black hover:bg-slate-400 transition"
             type="submit"
           >
             Create Product
