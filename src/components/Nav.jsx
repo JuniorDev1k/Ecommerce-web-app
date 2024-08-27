@@ -20,7 +20,7 @@ const Nav = () => {
   };
   return (
     <nav className=" bg-transparent p-5 flex justify-between absolute top-0 left-0 right-0 ">
-      <Logo className="" />
+      <Logo />
       {/* our Navigation Links */}
       <ul className="lg:flex justify-center hidden gap-10 flex-1 text-2xl text-text text-l items-center tracking-wider ">
         {Links.map((i) => {
@@ -78,7 +78,7 @@ const Nav = () => {
               {" "}
               Log Out
             </button>
-            <button onClick={() => setToggle(!toggle)} className="md:hidden  ">
+            <button onClick={() => setToggle(!toggle)} className="md:hidden ">
               X
             </button>
           </>

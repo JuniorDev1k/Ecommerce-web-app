@@ -48,7 +48,7 @@ const AddProduct = () => {
         () => {
           // After upladoing successfully, adding the imgUrl to data state
           getDownloadURL(upload.snapshot.ref).then((downloadURL) => {
-            console.log("ing available at : ", downloadURL);
+            console.log("img available at : ", downloadURL);
             setData((prev) => ({ ...prev, ImgUrl: downloadURL })); // handling the state ( prev )
           });
         }

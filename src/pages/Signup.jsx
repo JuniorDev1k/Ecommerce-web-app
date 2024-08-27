@@ -34,9 +34,7 @@ const Signup = () => {
   };
 
   return (
-    // we better write less html code below
     <>
-      (
       <div className=" auth flex justify-center items-center p-4 h-screen ">
         <div className="signup-container flex flex-col  p-10 gap-2 rounded-lg items-center w-full sm:w-3/4  md:w-1/2   ">
           <h1 className="mb-4 text-2xl font-robotto  mt-12 sm:mt-4  ">
@@ -111,7 +109,7 @@ const Signup = () => {
           </p>
         </div>
       </div>
-      )}
+      )
     </>
   );
 };
