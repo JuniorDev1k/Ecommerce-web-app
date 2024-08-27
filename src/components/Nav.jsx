@@ -22,7 +22,7 @@ const Nav = () => {
     <nav className=" bg-transparent p-5 flex justify-between absolute top-0 left-0 right-0 ">
       <Logo className="" />
       {/* our Navigation Links */}
-      <ul className="sm:flex justify-center hidden gap-10 flex-1 text-2xl text-text text-l items-center tracking-wider ">
+      <ul className="lg:flex justify-center hidden gap-10 flex-1 text-2xl text-text text-l items-center tracking-wider ">
         {Links.map((i) => {
           const { id, Lname, href } = i;
           return (
@@ -36,12 +36,15 @@ const Nav = () => {
         })}
       </ul>
       {toggle && (
-        <ul className="small-screen-links absolute left-0 top-0 w-40 h-screen pt-14   flex flex-col gap-2 items-center bg-transparent/75 md:hidden">
+        <ul className="small-screen-links absolute left-0 top-0 w-[40vw] h-screen pt-14   flex flex-col gap-2 items-center bg-transparent/95 lg:hidden">
           {Links.map((i) => {
             const { id, Lname, href } = i;
             return (
               <div className=" text-center h-10  bg-black  hover:border-l-2  border-secondary ease-in-out duration-300 w-full ">
-                <li className=" text-text  hover:text-secondary-0" key={id}>
+                <li
+                  className=" text-text  hover:text-secondary-0 p-4 "
+                  key={id}
+                >
                   <Link to={href}>{Lname}</Link>
                 </li>
               </div>
@@ -65,7 +68,6 @@ const Nav = () => {
                 {" "}
                 {currentuser?.displayName &&
                   currentuser?.displayName.slice(0, 10)}
-                ...{" "}
               </p>
             </div>
 
@@ -76,7 +78,7 @@ const Nav = () => {
               {" "}
               Log Out
             </button>
-            <button onClick={() => setToggle(!toggle)} className="md:hidden ">
+            <button onClick={() => setToggle(!toggle)} className="md:hidden  ">
               X
             </button>
           </>
@@ -89,7 +91,10 @@ const Nav = () => {
             <div>
               <Link to="/signup">Signup</Link>
             </div>
-            <button onClick={() => setToggle(!toggle)} className="lg:hidden">
+            <button
+              onClick={() => setToggle(!toggle)}
+              className="lg:hidden active:rotate-90 transition"
+            >
               X
             </button>
           </>

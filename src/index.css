@@ -62,16 +62,7 @@
     transform: translate(0);
   }
 }
-.services-bro {
-  height: 100vh;
-  background-image: linear-gradient(2deg, #fa0303 2%, black 100%);
-}
-.services-bro h1 {
-  background: #240101;
-  background: linear-gradient(to right, #240101 0%, #ff1a16 100%);
-  font-weight: 400;
-  font-family: Ribeye Marrow;
-}
+
 .trustworthy {
   box-shadow: #df0d0d;
 }
@@ -116,7 +107,6 @@ input {
   }
   100% {
     transform: translateX(-50%);
-    /* Move left by half of the container width */
   }
 }
 
@@ -165,16 +155,19 @@ input {
   background-image: url("./Assets/Images/joseph-greve-D_1-g2eLho8-unsplash.jpg");
   background-size: cover;
   width: 60vw;
+  background-position: center;
 }
 .radio-input:checked + #Accessory {
   background-image: url("./Assets/Images/redd-f-3mWxKnqET3E-unsplash.jpg");
   background-size: cover;
+  background-position: center;
   width: 60vw;
 }
 .radio-input:checked + #FullConfig {
   width: 60vw;
   background-image: url("./Assets/Images/The Manly Club is under construction.jpg");
   background-size: cover;
+  background-position: center;
 }
 .radio-input:checked + .card-category .description {
   opacity: 1 !important ;

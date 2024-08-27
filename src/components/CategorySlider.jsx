@@ -108,7 +108,7 @@ const CategorySlider = () => {
           return (
             <div
               key={id}
-              className=" flex flex-nowrap justify-start  h-[60vh] "
+              className=" flex flex-nowrap justify-start  h-[40vh] md:h-[60vh] "
             >
               <input
                 className="radio-input  hidden"

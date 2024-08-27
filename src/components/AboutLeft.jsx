@@ -5,7 +5,7 @@ const AboutLeft = (props) => {
   const { img, story, year } = props.object;
 
   return (
-    <div className=" w-3/4   flex flex-col sm:flex-row items-center gap-6">
+    <div className=" w-3/4   flex flex-col md:flex-row items-center gap-6">
       <div
         className=" w-full pt-6   flex flex-col  items-center"
         data-aos="zoom-in"
